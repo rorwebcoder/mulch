@@ -32,11 +32,8 @@ test:
   host: 127.0.0.1
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: Mulch_production
-  pool: 5
-  username: root
-  password:
-  host: 127.0.0.1
+  host: ec2-54-204-44-31.compute-1.amazonaws.com
+  database:	dbuliio4k2brct
+  username:	htrhzdrykbroeo
+  port:	5432
+  password: HYhYzXN34IPJMOVuDGB9VqPlZy
