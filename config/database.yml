@@ -32,8 +32,8 @@ test:
   host: 127.0.0.1
 
 production:
-  host: ec2-54-204-44-31.compute-1.amazonaws.com
-  database:	dbuliio4k2brct
-  username:	htrhzdrykbroeo
+  host: ec2-184-73-251-115.compute-1.amazonaws.com
+  database:	d3faae6cnv520u
+  username:	ysmpopfplykzbp
   port:	5432
-  password: HYhYzXN34IPJMOVuDGB9VqPlZy
+  password: bB9LsemKiZefL9nHm9TAPRSFUU
