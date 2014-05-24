@@ -1,82 +1,68 @@
 <%if current_user%>
-
-                                                                                <header class="main-header">
-                        <div class="container-fluid">
-                            <a data-gtm-label="clicked" data-gtm-event="navigation" data-gtm-action="logo" class="logo js-gtm-event" href="/">Fiverr logo</a>
-                    <nav class="main-nav">
-                        <ul>
-                            <li class="js-top-menu-home">
-                                <a data-gtm-label="home-logged" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-gtm-event" href="/">
-                                    HOME
-                                </a>
-                            </li>
-                            <li class="js-top-menu-todo">
-                                <a href="#">
-                                    To Do
-                                </a>
-                            </li>
-                                <li class="dropdown header-notify">
-                                <a class="notify-trigger" data-toggle="dropdown" href="#"><span class="notify-ani"></span><span class="notify-ani-flashing"></span>MESSAGES</a>
-                                <div class="notify-menu">
-                                    <div class="antiscroll-wrap">
-                                        <ul class="antiscroll-inner loading"></ul>
-                                    </div>
-                                    <span class="load-more">
-                                        <a href="#">Load More</a>
-                                    </span>
-                                </div>
-
-                                </li>
-                                <li class="js-top-menu-shopping">
-                                    <a href="#">SHOPPING</a>
-                                </li>
-                                <li class="js-top-menu-sales">
-                                        <a href="#">START SELLING</a>
-                                </li>
-                                <li class="dropdown header-user">
-                                    <a class="user-trigger" href="/usuganya">
-                                        <span class="user-pict-24"><img alt="usuganya" src="//cdn21.fiverrcdn.com/assets/v2_globals/missing-image-24x24-903722ff549aca3f187a6542124c5b70.png" class="noscale"></span>
-                                        <%= current_user && !current_user.name.blank? ? current_user.name : "No Name"%>
-                                        <em class="unread-count">$0</em>
-
-                                    </a>
-                                    <div class="user-menu">
-                                        <ul>
-                                            <li><a class="link-inbox" href="#">Inbox</a></li>
-                                            <li><a class="link-favorites" href="#">Collections</a></li>
-                                            <li><a class="link-settings" href="#">Settings</a></li>
-                                            <li class="divi">&nbsp;</li>
-                                            <li><a class="link-logout" href="/users/sign_out">Logout</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-
-
-
-
-                        </ul>
-                    </nav>
-
-
-                        </div>
-                    </header>
-<%else%>
-
 <header class="main-header">
-                        <div class="container-fluid">
-                            <a data-gtm-label="clicked" data-gtm-event="navigation" data-gtm-action="logo" class="logo js-gtm-event" href="/">Fiverr logo</a>
-                               
-                    <nav class="main-nav main-nav-guest">
-                        <ul>
-                            <li><a data-gtm-label="home" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-gtm-event" href="/">HOME</a></li>
-                            <li><a rel="nofollow" data-gtm-label="start selling" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-open-popup-join js-gtm-event" href="/users/sign_in">START SELLING</a></li>
-                            <li><a data-gtm-event="navigation" data-gtm-label="sign in" data-gtm-action="black-nav" class="js-open-popup-login js-gtm-event" href="/users/sign_in">SIGN IN</a></li>
-                            <li><a data-gtm-event="navigation" data-gtm-label="join" data-gtm-action="black-nav" class="btn-green js-open-popup-join js-gtm-event" href="/users/sign_up">JOIN</a></li>
-                        </ul>
-                    </nav>
-                        </div>
-                    </header>
+   <div class="container-fluid">
+      <a data-gtm-label="clicked" data-gtm-event="navigation" data-gtm-action="logo" class="logo js-gtm-event" href="/">Fiverr logo</a>
+      <nav class="main-nav">
+         <ul>
+            <li class="js-top-menu-home">
+               <a data-gtm-label="home-logged" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-gtm-event" href="/">
+               HOME
+               </a>
+            </li>
+            <li class="js-top-menu-todo">
+               <a href="#">
+               To Do
+               </a>
+            </li>
+            <li class="dropdown header-notify">
+               <a class="notify-trigger" data-toggle="dropdown" href="#"><span class="notify-ani"></span><span class="notify-ani-flashing"></span>MESSAGES</a>
+               <div class="notify-menu">
+                  <div class="antiscroll-wrap">
+                     <ul class="antiscroll-inner loading"></ul>
+                  </div>
+                  <span class="load-more">
+                  <a href="#">Load More</a>
+                  </span>
+               </div>
+            </li>
+            <li class="js-top-menu-shopping">
+               <a href="#">SHOPPING</a>
+            </li>
+            <li class="js-top-menu-sales">
+               <a href="#">START SELLING</a>
+            </li>
+            <li class="dropdown header-user">
+               <a class="user-trigger" href="/usuganya">
+               <span class="user-pict-24"><img alt="usuganya" src="//cdn21.fiverrcdn.com/assets/v2_globals/missing-image-24x24-903722ff549aca3f187a6542124c5b70.png" class="noscale"></span>
+               <%= current_user && !current_user.name.blank? ? current_user.name : "No Name"%>
+               <em class="unread-count">$0</em>
+               </a>
+               <div class="user-menu">
+                  <ul>
+                     <li><a class="link-inbox" href="#">Inbox</a></li>
+                     <li><a class="link-favorites" href="#">Collections</a></li>
+                     <li><a class="link-settings" href="#">Settings</a></li>
+                     <li class="divi">&nbsp;</li>
+                     <li><a class="link-logout" href="/users/sign_out">Logout</a></li>
+                  </ul>
+               </div>
+            </li>
+         </ul>
+      </nav>
+   </div>
+</header>
+<%else%>
+<header class="main-header">
+   <div class="container-fluid">
+      <a data-gtm-label="clicked" data-gtm-event="navigation" data-gtm-action="logo" class="logo js-gtm-event" href="/">Fiverr logo</a>
+      <nav class="main-nav main-nav-guest">
+         <ul>
+            <li><a data-gtm-label="home" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-gtm-event" href="/">HOME</a></li>
+            <li><a rel="nofollow" data-gtm-label="start selling" data-gtm-event="navigation" data-gtm-action="black-nav" class="js-open-popup-join js-gtm-event" href="/users/sign_in">START SELLING</a></li>
+            <li><a data-gtm-event="navigation" data-gtm-label="sign in" data-gtm-action="black-nav" class="js-open-popup-login js-gtm-event" href="/users/sign_in">SIGN IN</a></li>
+            <li><a data-gtm-event="navigation" data-gtm-label="join" data-gtm-action="black-nav" class="btn-green js-open-popup-join js-gtm-event" href="/users/sign_up">JOIN</a></li>
+         </ul>
+      </nav>
+   </div>
+</header>
 <%end%>
-
-                                                                               
-                                                                                
