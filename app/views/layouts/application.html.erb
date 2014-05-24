@@ -7,8 +7,33 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="main-wrapper" style="padding-top: 148px;">
 
-<%= yield %>
+<!--HEADER-->
+<div id="main-wrapper-header">
+  <%= render :partial => "common/logo_tabs"%>
+		<nav class="main-category-search">
+  <%= render :partial => "common/category_search"%>
+  <%= render :partial => "common/category_tab"%>
+		</nav>
+</div>
+<!--HEADER-->
+
+<!--Main Content-->
+<div class="main-content">
+<%=yield%>
+  <%= render :partial => "common/footer_search"%>
+  <%= render :partial => "common/footer_sponsers"%>
+</div>
+<!--Main Content-->
+
+<!--footer-->
+  <%= render :partial => "common/footer"%>
+<!--footer-->
+
+</div>
+
+<%#= yield %>
 
 </body>
 </html>
