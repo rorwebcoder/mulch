@@ -1,0 +1,56 @@
+ 
+
+
+<div class="mp-container container-fluid">
+                    <div class="row-fluid">
+                        <div class="span12 mp-content">
+                            <div class="mp-header header-centered">
+                                <h1>Join Fiverr</h1>
+                                    <h2>3 Million+ Services. Secure Transactions. Unbeatable Value.</h2>
+                            </div>
+                            <div class="popup-on-page">
+        <section class="popup-new popup-user-forms-new popup-user-register ">
+            <header>
+                <a rel="nofollow" class="btn-close" href="#"></a>
+            </header>
+            <div class="popup-content">
+
+                    <div class="main-message">
+                        <div data-section="1" class="js-form-join-section">
+                                <a rel="nofollow" tabindex="7" data-gtm-label="facebook" data-gtm-action="social-join-click" data-gtm-event="two-step-reg" class="btn-standard-lrg btn-fb-blue  btn-fb-connect js-btn-fb-connect js-gtm-event" href="#">Join with Facebook</a>
+                                    <a rel="nofollow" tabindex="7" data-gtm-label="gplus" data-gtm-action="social-join-click" data-gtm-event="two-step-reg" class="btn-standard-lrg btn-gplus-red  btn-gplus-connect js-btn-gplus-connect js-gtm-event" href="#">Join with Google</a>
+                                <div class="divi pad-bot"><span>OR</span></div>
+                        </div>
+               </div>
+                <div class="popup-form">
+                                           <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+																																								<div style="margin:0;padding:0;display:inline">
+													   <%= f.error_notification %>
+																																								</div>
+                <div class="form-errors hidden">
+                </div>
+                <div data-section="1" class="js-form-join-section form-inputs">
+                    <div class="form-row cf">
+                        <div class="input-wrap">
+	    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :name, :required => true %>
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+                        </div>
+                    </div>
+                </div>
+																
+																																									        <div class="form-row-buttons cf">
+				       <!--<input type="submit" value="Join" tabindex="6" name="commit" id="join-btn" data-toggle-text="Create" class="btn-standard btn-green rf">-->
+																								<input class="btn-standard btn-green rf" type="submit" value="Sign up" name="commit">
+																								 <%#= f.button :submit, "Sign up" %>
+                </div>
+ <%end%>
+                            <small class="toggle-form-action">Already a member? <a class="js-open-popup-login" href="http://www.fiverr.com/login">Sign In</a></small>
+                </div>
+            </div>
+        </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>

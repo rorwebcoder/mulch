@@ -1,6 +1,6 @@
 Mulch::Application.routes.draw do
   
-
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -14,7 +14,12 @@ Mulch::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  namespace :admin do
+    resource :home, :controller => "home" do
+    end
+  end
   resources :home
+  resources :users
   # Sample resource route with options:
   #   resources :products do
   #     member do
