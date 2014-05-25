@@ -1,11 +1,17 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,  :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   #~ , :token_authenticatable
-  attr_accessible :email, :password, :password_confirmation, :name, :about, :remember_me, :locker_attributes
+  attr_accessible :email, :password, :password_confirmation, :name, :about, :remember_me, :locker_attributes, :role
   validates_presence_of :email
   mount_uploader :image
   #~ , ImageUploader
   has_many :authorizations
+  
+  #~ after_create :send_confirmation_mail
+  
+  def send_confirmation_mail
+    #~ UserMailer.send_new_user_message(self).deliver
+  end
 
   def self.new_with_session(params,session)
     if session["devise.user_attributes"]
