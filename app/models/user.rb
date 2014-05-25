@@ -5,7 +5,10 @@ class User < ActiveRecord::Base
   validates_presence_of :email
   mount_uploader :image
   #~ , ImageUploader
+  
+  # Associations
   has_many :authorizations
+  has_many :orders
   
   #~ after_create :send_confirmation_mail
   
