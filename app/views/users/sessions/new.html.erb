@@ -1,19 +1,135 @@
-<h2>Sign in</h2>
-
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, :required => false, :autofocus => true %>
-    <%= f.input :password, :required => false %>
-    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
 
 
+ <div class="mp-container container-fluid">
 
+                    <div class="row-fluid">
+                        <div class="span12 mp-content">
+
+                            <div class="mp-header header-centered">
+                                <h1>Login to Mulch</h1>
+                                <h2>State thy name &amp; ye shall pass.</h2>
+                            </div>
+
+                            <div class="popup-on-page">
+                                                                <section class="popup-new popup-user-forms-new popup-user-login ">
+                                <header>
+                                    <a rel="nofollow" class="btn-close" href="#"></a>
+                                </header>
+                                <div class="popup-content">
+                                    <!-- login form begin -->
+                                    <div style="display: block;" class="popup-content-login">
+
+                                        <div class="main-message">
+
+                                                <a rel="nofollow" tabindex="5" data-gtm-label="facebook" data-gtm-action="social-login-click" data-gtm-event="two-step-reg" class="cookie btn-standard-lrg btn-fb-blue  js-btn-fb-connect js-gtm-event" href="#">CONNECT WITH FACEBOOK</a>
+                                                    <a rel="nofollow" tabindex="5" data-gtm-label="gplus" data-gtm-action="social-login-click" data-gtm-event="two-step-reg" class="cookie btn-standard-lrg btn-gplus-red  js-btn-gplus-connect js-gtm-event" href="#">CONNECT WITH GOOGLE</a>
+                                                <div class="divi pad-bot"><span>OR</span></div>
+                                        </div>
+
+                                        <div class="popup-form">
+                                                
+                                            <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f| %>
+																																												<div style="margin:0;padding:0;display:inline"> 
+																																												</div>
+                                                
+
+
+                                                <div class="form-errors hidden"></div>
+
+                                                <div class="form-row cf">
+                                                    <div class="input-wrap">
+                                                        <label>
  
+																																																																    <%= f.input :email, :required => false, :autofocus => true %>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row cf">
+                                                    <div class="input-wrap">
+                                                        <label>
+																																																										<%= f.input :password, :required => false %>
+                                                        </label>
+                                                    <div class="error-container" style="display: block;">
+																								 
+																																																				   <% if flash[:alert] %>
+																																																																<div data-alert="" class="alert-box alert msg-error">
+																																																																		<%= flash[:alert] %>
+																																																																</div>
+																																																																<% end %>
+																																																				</div></div>
+                                                </div>
+
+
+                                                <div class="form-row-buttons cf">
+                                                        <label for="user_session_remember_me" class=" check-text lf">
+																																																										<%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+                                                        </label>
+
+                                                        <!--<input type="submit" value="Login" tabindex="4" name="commit" id="login-btn" class="btn-standard btn-green rf">-->
+																																																																    <%= f.button :submit, "Sign in",:class=>"btn-standard btn-green rf" %>
+                                                        <span class="toggle-forgot-pwd rf">
+																																																												<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+																																																																<%= link_to "Forgot password?", new_password_path(resource_name), :class=>"js-btn-forgotpw" %><br />
+																																																												<% end -%>
+                                                        </span>
+                                                </div>
+
+<%end%>
+                                            <div class="toggle-form-action">
+                                                    <p>Not a member yet? <a class="js-open-popup-join" href="/users/sign_up">Register now</a> &mdash; it's fun and easy!</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!-- login form end -->
+
+                                    <!-- forgot pw form begin -->
+                                    <div style="" class="popup-content-forgotpw">
+
+                                        <div class="main-message forgot-password">
+
+                                            <h2>Reset Password</h2>
+                                            <h3 style="padding-bottom: 0px">Enter the email you used in your Fiverr profile. A password reset link will be sent to you by email.</h3>
+
+                                        </div>
+
+                                        <div class="popup-form">
+
+
+                                            <form method="post" class="js-forgot-password-form forgot-password-form" action="/password_resets" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"><input type="hidden" value="issXK/w6FDyNg2AT6jKFEm0BGQoLkjsceRh+EJ7bb0w=" name="authenticity_token"></div>
+                                                <div class="form-errors">
+                                                </div>
+
+                                                <div class="form-row cf">
+                                                    <div class="input-wrap">
+                                                        <label>
+                                                            <input type="text" placeholder="Enter email address" name="email" id="resetPassword">
+                                                            <span class="f-label">Enter email address</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row-buttons">
+
+                                                        <a class="js-btn-signin lf" href="#">Back to Sign In</a>
+                                                        <input type="submit" value="Submit" name="commit" id="forgotpw-btn" class="btn-standard btn-green">
+                                                </div>
+
+</form>
+                                        </div>
+
+                                    </div>
+                                    <!-- forgot pw form end -->
+
+                                </div>
+
+                            </section>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>

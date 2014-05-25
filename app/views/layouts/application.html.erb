@@ -11,6 +11,30 @@
 
 <!--HEADER-->
 <div id="main-wrapper-header">
+		<div class="main-flashes">
+					
+						<% if flash[:notice] %>
+   <div data-alert="" class="flash-message flash-success">
+    <%= flash[:notice] %>
+    </div>
+   <% end %>
+			
+  <% if flash[:error] %>
+  <div class="flash-message flash-error">
+		<%= flash[:error] %>
+  </div>
+  <% end %>
+		
+  <% if flash[:alert] %>
+  <div data-alert="" class="flash-message flash-notice">
+    <%= flash[:alert] %>
+  </div>
+  <% end %>
+					
+		</div>
+		
+ 
+				
   <%= render :partial => "common/logo_tabs"%>
 		<nav class="main-category-search">
   <%= render :partial => "common/category_search"%>

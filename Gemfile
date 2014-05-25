@@ -25,7 +25,24 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+gem 'devise'
+gem 'zurb-foundation'
+gem 'carrierwave'
+gem 'twitter'
 gem 'jquery-rails'
+gem 'json'
+gem 'koala'
+gem 'linkedin'
+gem 'omniauth'
+gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
+gem 'rmagick'
+gem 'simple_form'
+  gem 'thin'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

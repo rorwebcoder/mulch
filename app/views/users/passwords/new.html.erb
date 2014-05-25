@@ -1,15 +1,70 @@
-<h2>Forgot your password?</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, :required => true, :autofocus => true %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
 
-<%= render "users/shared/links" %>
+<div class="mp-container container-fluid">
+
+                    <div class="row-fluid">
+                        <div class="span12 mp-content">
+
+                            <div class="mp-header header-centered">
+                                <h1>Login to Fiverr</h1>
+                                <h2>State thy name &amp; ye shall pass.</h2>
+                            </div>
+
+                            <div class="popup-on-page">
+                                                                <section class="popup-new popup-user-forms-new popup-user-login ">
+                                <header>
+                                    <a rel="nofollow" class="btn-close" href="#"></a>
+                                </header>
+                                <div class="popup-content">
+                                
+                                    <!-- forgot pw form begin -->
+                                    <div style="display: block;" class="popup-content-forgotpw">
+
+                                        <div class="main-message forgot-password">
+
+                                            <h2>Reset Password</h2>
+                                            <h3 style="padding-bottom: 0px">Enter the email you used in your Fiverr profile. A password reset link will be sent to you by email.</h3>
+
+                                        </div>
+
+                                        <div class="popup-form">
+
+
+                                            <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+																																												  <%= f.error_notification %>
+																																												<div style="margin:0;padding:0;display:inline"></div>
+                                                <div class="form-errors">
+                                                </div>
+
+                                                <div class="form-row cf">
+                                                    <div class="input-wrap">
+                                                        <label>
+																																																																<%= f.input :email, :required => true, :autofocus => true %>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-row-buttons">
+
+                                                        <a class="js-btn-signin lf" href="/users/sign_in">Back to Sign In</a>
+																																																								<%= f.button :submit, "Send me reset password instructions", :class=>"btn-standard btn-green" %>
+                                                </div>
+
+<%end%>
+                                        </div>
+
+                                    </div>
+                                    <!-- forgot pw form end -->
+
+                                </div>
+
+                            </section>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>

@@ -1,19 +1,69 @@
-<h2>Change your password</h2>
 
-<%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= f.error_notification %>
 
-  <%= f.input :reset_password_token, :as => :hidden %>
-  <%= f.full_error :reset_password_token %>
 
-  <div class="form-inputs">
-    <%= f.input :password, :label => "New password", :required => true, :autofocus => true %>
-    <%= f.input :password_confirmation, :label => "Confirm your new password", :required => true %>
-  </div>
+                                                                                                                                                                               
+                                                                                                                                                                               
 
-  <div class="form-actions">
-    <%= f.button :submit, "Change my password" %>
-  </div>
-<% end %>
+<div class="mp-container container-fluid ">
 
-<%= render "users/shared/links" %>
+                    <div class="row-fluid">
+                        <div class="span12 mp-content">
+                           
+                            <div class="mp-header header-centered">
+                                <h1>If you see this page, chances are you have memory issues...</h1>
+                                <h2>We know what it feels like, so we decided to give our password resets for free!</h2>
+                            </div>
+
+                            <div class="popup-on-page">
+
+                                <section class="popup popup-grey popup-user-forms">
+
+                                    <div class="popup-content">
+
+                                        <a class="btn-close" href="#"></a>
+
+                                        <!-- reset pw form begin -->
+                                        <div class="popup-content-resetpw">
+                <div class="popup-form">
+
+                                                  <%= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+																																																		  <%= f.error_notification %>
+																																																		<div style="margin:0;padding:0;display:inline">      <%= f.input :reset_password_token, :as => :hidden %>
+                                                                                                                                                                                                                                                <%= f.full_error :reset_password_token %></div>
+
+                                                    <div class="form-errors hidden">
+                                                    </div>
+
+                                                    <div class="form-row cf">
+                                                        <div class="input-wrap">  <%= f.input :password, :label=>"New Password", :autofocus => true ,  :input_html => { :class => "password-field",:size=>"30",:style=>"margin-left:25px" } %> </div>
+                                                    </div>
+<br>
+                                                    <div class="form-row cf">
+                                                        <div class="input-wrap"><%= f.input :password_confirmation, :label=>"Confirm Password",  :input_html => { :class => "password-field" ,:size=>"30",:style=>"margin-left:5px"} %></div>
+                                                    </div>
+
+                                                    <div class="form-row-buttons">
+<br>
+                                                            <span class="lf">
+                                                                <a class="js-open-popup-login" href="/users/sign_in">Back to Sign In</a>
+                                                            </span>
+																																																												<div style="margin-right:20px">
+                                                             <%= f.button :submit, "Change", :class=>"btn-standard btn-green" %>
+</div>
+                                                    </div>
+
+<%end%>
+                                            </div>
+    </div>
+                                        <!-- reset pw form end -->
+
+                                    </div>
+
+                                </section>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
