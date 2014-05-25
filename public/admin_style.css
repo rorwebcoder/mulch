@@ -1,0 +1,174 @@
+
+body.active_admin #header {
+    background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #44484B;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    height: 20px;
+    overflow: visible;
+    padding: 9px 30px;
+    position: inherit;
+    text-shadow: 0 1px 0 #000000;
+    z-index: 900;
+}
+body.active_admin #header h1 {
+    color: #CDCDCD;
+    display: inline-block;
+    float: left;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding-top: 3px;
+}
+body.active_admin #header h1 a {
+    text-decoration: none;
+}
+body.active_admin #header h1 a:hover {
+    color: #FFFFFF;
+}
+body.active_admin #header h1 img {
+    position: relative;
+    top: -2px;
+}
+body.active_admin #header a, body.active_admin #header a:link {
+    color: #CDCDCD;
+}
+body.active_admin #header .header-item {
+    float: left;
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+body.active_admin #header ul#tabs {
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body.active_admin #header ul#tabs > li {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 4px;
+    position: relative;
+}
+body.active_admin #header ul#tabs > li a {
+    border-radius: 10px;
+    padding: 6px 10px 4px;
+    position: relative;
+    text-decoration: none;
+}
+body.active_admin #header ul#tabs > li.current > a {
+    background: none repeat scroll 0 0 #7B8389;
+    color: #FFFFFF;
+}
+body.active_admin #header ul#tabs > li.has_nested > a {
+    background: url("/images/active_admin/nested_menu_arrow.gif") no-repeat scroll 89% 50% rgba(0, 0, 0, 0);
+    padding-right: 20px;
+    z-index: 1050;
+}
+body.active_admin #header ul#tabs > li.has_nested.current > a {
+    background: url("/images/active_admin/nested_menu_arrow_dark.gif") no-repeat scroll 89% 50% #7B8389;
+    padding-right: 20px;
+}
+body.active_admin #header ul#tabs > li:hover > a {
+    background: none repeat scroll 0 0 #7B8389;
+    color: #FFFFFF;
+}
+body.active_admin #header ul#tabs > li.has_nested:hover > a {
+    background: url("/images/active_admin/nested_menu_arrow_dark.gif") no-repeat scroll 89% 50% #7B8389;
+    border-bottom: 5px solid #7B8389;
+    border-radius: 10px 10px 0 0;
+}
+body.active_admin #header ul#tabs > li:hover ul {
+    display: block;
+}
+body.active_admin #header ul#tabs > li ul {
+    background: none repeat scroll 0 0 #7B8389;
+    border-radius: 0 10px 10px;
+    box-shadow: 0 1px 3px #444444;
+    display: none;
+    float: left;
+    list-style: none outside none;
+    margin-top: 5px;
+    padding: 3px 0 5px;
+    position: absolute;
+    width: 175px;
+    z-index: 1010;
+}
+body.active_admin #header ul#tabs > li ul li {
+    margin: 0;
+}
+body.active_admin #header ul#tabs > li ul li a {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+}
+body.active_admin #header ul#tabs > li ul li a:hover {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+body.active_admin #header ul#tabs > li ul li.current a {
+    border-radius: 0;
+}
+body.active_admin #header #utility_nav {
+    color: #AAAAAA;
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+body.active_admin #header #utility_nav span, body.active_admin #header #utility_nav a {
+    margin-left: 10px;
+}
+body.active_admin #header #utility_nav a {
+    text-decoration: none;
+}
+body.active_admin #header #utility_nav a:hover {
+    color: #FFFFFF;
+}
+
+
+body.active_admin #title_bar:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+body.active_admin #title_bar {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-color: #E6E6E6 #D4D4D4 #EEEEEE;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    box-sizing: border-box;
+    color: #5E6469;
+    display: table;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0 0 15px;
+    padding: 10px 30px;
+    position: relative;
+    text-shadow: 0 1px 0 #FFFFFF;
+    width: 100%;
+    z-index: 800;
+}
+
+
+body.active_admin #title_bar #titlebar_left, body.active_admin #title_bar #titlebar_right {
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+}
+
+body.active_admin #title_bar h2 {
+    font-size: 2.6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}

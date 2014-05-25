@@ -1,6 +1,7 @@
 class Admin::HomeController < ApplicationController
+		layout 'admin_layout'
 		
 		def show
-								render :layout => false
+ 
 		end
 end

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mulch</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<link href="/admin_style.css" media="all" rel="stylesheet" type="text/css" />
+<body style="background-color:white" class="active_admin">
+ 
+	
+
+<div id="header" class="header">
+        <h1 id="site_title" class="site_title">Mulch Admin</h1>
+        <ul id="tabs" class="header-item">
+          <li id="home" class="<%=params["action"] == "show" ? 'current' : ''%>"><a href="#">Home</a></li>
+          <li id="dashboard"><a href="#">Category</a></li>
+          <li id="users"><a href="#">Users</a></li>
+        </ul>
+        <p id="utility_nav" class="header-item"></p>
+								
+								
+								<div style="float:right"><a data-method="get" href="/users/sign_out"><span class="label label-important">Log out</span></a></div>
+		</div>
+
+<%=yield%>
+
+</body>
+</html>
