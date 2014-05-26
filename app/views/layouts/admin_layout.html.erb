@@ -8,15 +8,12 @@
 </head>
 <link href="/admin_style.css" media="all" rel="stylesheet" type="text/css" />
 <body style="background-color:white" class="active_admin">
- 
-	
-
 <div id="header" class="header">
         <h1 id="site_title" class="site_title">Mulch Admin</h1>
         <ul id="tabs" class="header-item">
-          <li id="home" class="<%=params["action"] == "show" ? 'current' : ''%>"><a href="#">Home</a></li>
+          <li id="home" class="<%=params["controller"] == "admin/home" ? 'current' : ''%>"><a href="/admin/home">Home</a></li>
           <li id="dashboard"><a href="#">Category</a></li>
-          <li id="users"><a href="#">Users</a></li>
+          <li id="users" class="<%=params["controller"] == "admin/users" ? 'current' : ''%>"><a href="/admin/users">Users</a></li>
         </ul>
         <p id="utility_nav" class="header-item"></p>
 								

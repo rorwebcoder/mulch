@@ -287,3 +287,26 @@ body.active_admin caption, body.active_admin th, body.active_admin td {
     text-align: left;
     vertical-align: middle;
 }
+
+table.reference th {
+    background-color: #555555 !important;
+    border: 1px solid #555555 !important;
+    color: #FFFFFF !important;
+    padding: 3px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+}
+
+table.reference tr:nth-child(2n+1) {
+    background-color: #F1F1F1 !important;
+}
+
+table.reference tr:nth-child(2n) {
+    background-color: #FFFFFF !important;
+    }
+				
+				table.reference td {
+    border: 1px solid #D4D4D4 !important;
+    padding: 7px 5px !important;
+    vertical-align: top !important;
+}
