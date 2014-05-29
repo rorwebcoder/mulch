@@ -40,7 +40,7 @@ gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
-gem 'rmagick'
+#gem 'rmagick'
 gem 'simple_form'
   gem 'thin'
 
