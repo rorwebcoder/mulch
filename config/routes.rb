@@ -14,10 +14,14 @@ Mulch::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  #ADMIN ROUTES
   namespace :admin do
     resource :home, :controller => "home" do
     end
+    resources :users
   end
+  
+  
   resources :home
   resources :users
   # Sample resource route with options:

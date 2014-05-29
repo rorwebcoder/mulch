@@ -1,3 +1,74 @@
+  <%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Dashboard"} %>
+		
+<div class="without_sidebar" id="active_admin_content">
+        <div id="main_content_wrapper">
+          <div id="main_content">
+            <div class="columns">
+              <div style="width: 49.0%; margin-right: 2%;" class="column">
+                <div class="panel">
+                  <h3>Recent Category</h3>
+                  <div class="panel_contents">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <thead>
+                        <tr>
+                          <th class="">Category</th>
+                          <th class="">Name</th>
+                          <th class="">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
 
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div style="width: 49.0%;" class="column">
+                <div class="panel">
+                  <h3>Recent Users</h3>
+                  <div class="panel_contents">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                      <thead>
+                        <tr>
+                          <th class="">Email</th>
+                          <th class="">Name</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+																						<%if !@users.blank? %>
+																						<%@users.each_with_index do |user|%>
+																										<tr id="user_101" class="odd">
+																												<td class=""><a href="#"><%=user.email.blank? ? "" : user.email%></a></td>
+																												<td class=""> <%=user.name.blank? ? "No Name" : user.name%></td>
+																										</tr>						
+																								<%end%>
+																								<%else%>
+																										<tr id="user_101" class="odd">
+																															<td>	No data Found</td>
+																												</tr>
+																								<%end%>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            <div style="clear:both;"></div></div>
+            <div class="columns">
+              <div style="width: 100.0%;" class="column">
+                <div class="panel">
+                  <h3>Show some data</h3>
+                  <div class="panel_contents">
+                    <div>Some info<a href="#"></a>.
+ 
+</div>
+                    <div>
+                      <br><br>
 
-This needs to be the admin layout <a href="/users/sign_out">Logout</a>
+</div>
+                  </div>
+                </div>
+              </div>
+            <div style="clear:both;"></div></div>
+          </div>
+        </div>
+      </div>

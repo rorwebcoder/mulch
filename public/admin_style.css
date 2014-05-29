@@ -1,0 +1,312 @@
+
+body.active_admin #header {
+    background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #44484B;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    height: 20px;
+    overflow: visible;
+    padding: 9px 30px;
+    position: inherit;
+    text-shadow: 0 1px 0 #000000;
+    z-index: 900;
+}
+body.active_admin #header h1 {
+    color: #CDCDCD;
+    display: inline-block;
+    float: left;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 20px;
+    padding-top: 3px;
+}
+body.active_admin #header h1 a {
+    text-decoration: none;
+}
+body.active_admin #header h1 a:hover {
+    color: #FFFFFF;
+}
+body.active_admin #header h1 img {
+    position: relative;
+    top: -2px;
+}
+body.active_admin #header a, body.active_admin #header a:link {
+    color: #CDCDCD;
+}
+body.active_admin #header .header-item {
+    float: left;
+    height: 20px;
+    position: relative;
+    top: 2px;
+}
+body.active_admin #header ul#tabs {
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body.active_admin #header ul#tabs > li {
+    display: inline-block;
+    font-size: 1em;
+    margin-right: 4px;
+    position: relative;
+}
+body.active_admin #header ul#tabs > li a {
+    border-radius: 10px;
+    padding: 6px 10px 4px;
+    position: relative;
+    text-decoration: none;
+}
+body.active_admin #header ul#tabs > li.current > a {
+    background: none repeat scroll 0 0 #7B8389;
+    color: #FFFFFF;
+}
+body.active_admin #header ul#tabs > li.has_nested > a {
+    background: url("/images/active_admin/nested_menu_arrow.gif") no-repeat scroll 89% 50% rgba(0, 0, 0, 0);
+    padding-right: 20px;
+    z-index: 1050;
+}
+body.active_admin #header ul#tabs > li.has_nested.current > a {
+    background: url("/images/active_admin/nested_menu_arrow_dark.gif") no-repeat scroll 89% 50% #7B8389;
+    padding-right: 20px;
+}
+body.active_admin #header ul#tabs > li:hover > a {
+    background: none repeat scroll 0 0 #7B8389;
+    color: #FFFFFF;
+}
+body.active_admin #header ul#tabs > li.has_nested:hover > a {
+    background: url("/images/active_admin/nested_menu_arrow_dark.gif") no-repeat scroll 89% 50% #7B8389;
+    border-bottom: 5px solid #7B8389;
+    border-radius: 10px 10px 0 0;
+}
+body.active_admin #header ul#tabs > li:hover ul {
+    display: block;
+}
+body.active_admin #header ul#tabs > li ul {
+    background: none repeat scroll 0 0 #7B8389;
+    border-radius: 0 10px 10px;
+    box-shadow: 0 1px 3px #444444;
+    display: none;
+    float: left;
+    list-style: none outside none;
+    margin-top: 5px;
+    padding: 3px 0 5px;
+    position: absolute;
+    width: 175px;
+    z-index: 1010;
+}
+body.active_admin #header ul#tabs > li ul li {
+    margin: 0;
+}
+body.active_admin #header ul#tabs > li ul li a {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+}
+body.active_admin #header ul#tabs > li ul li a:hover {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+body.active_admin #header ul#tabs > li ul li.current a {
+    border-radius: 0;
+}
+body.active_admin #header #utility_nav {
+    color: #AAAAAA;
+    display: inline-block;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+body.active_admin #header #utility_nav span, body.active_admin #header #utility_nav a {
+    margin-left: 10px;
+}
+body.active_admin #header #utility_nav a {
+    text-decoration: none;
+}
+body.active_admin #header #utility_nav a:hover {
+    color: #FFFFFF;
+}
+
+
+body.active_admin #title_bar:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+body.active_admin #title_bar {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-color: #E6E6E6 #D4D4D4 #EEEEEE;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    box-sizing: border-box;
+    color: #5E6469;
+    display: table;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin: 0 0 15px;
+    padding: 10px 30px;
+    position: relative;
+    text-shadow: 0 1px 0 #FFFFFF;
+    width: 100%;
+    z-index: 800;
+}
+
+
+body.active_admin #title_bar #titlebar_left, body.active_admin #title_bar #titlebar_right {
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+}
+
+body.active_admin #title_bar h2 {
+    font-size: 2.6em;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+body.active_admin #active_admin_content {
+    margin: 0;
+    padding: 25px 30px;
+}
+
+
+body.active_admin #active_admin_content #main_content_wrapper {
+    float: left;
+    width: 100%;
+}
+
+
+body.active_admin .columns {
+    margin-bottom: 10px;
+}
+body.active_admin .columns {
+    clear: both;
+    padding: 0;
+}
+
+
+body.active_admin .columns .column {
+    float: left;
+}
+
+
+body.active_admin .section, body.active_admin .panel {
+    background: none repeat scroll 0 0 #F4F4F4;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px #DDDDDD inset;
+    margin-bottom: 20px;
+}
+
+
+body.active_admin .section > h3, body.active_admin .panel > h3 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: -moz-linear-gradient(-90deg, #EFEFEF, #DFE1E2) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-color: #E6E6E6 #D4D4D4 #CDCDCD;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 0 1px #FFFFFF inset;
+    color: #5E6469;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin-bottom: 0.5em;
+    padding: 5px 10px 3px;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+body.active_admin .section > div, body.active_admin .panel > div {
+    padding: 3px 15px 15px;
+}
+
+
+body.active_admin .panel_contents table {
+    margin-top: 5px;
+}
+body.active_admin table {
+    margin-bottom: 1.4em;
+    width: 100%;
+}
+body.active_admin table {
+    border-collapse: separate;
+    border-spacing: 0;
+    vertical-align: middle;
+}
+
+
+body.active_admin .status_tag.ok, body.active_admin .status_tag.published, body.active_admin .status_tag.complete, body.active_admin .status_tag.completed, body.active_admin .status_tag.green {
+    background: none repeat scroll 0 0 #8DAA92;
+}
+
+
+body.active_admin html, body.active_admin body, body.active_admin div, body.active_admin span, body.active_admin applet, body.active_admin object, body.active_admin iframe, body.active_admin h1, body.active_admin h2, body.active_admin h3, body.active_admin h4, body.active_admin h5, body.active_admin h6, body.active_admin p, body.active_admin blockquote, body.active_admin pre, body.active_admin a, body.active_admin abbr, body.active_admin acronym, body.active_admin address, body.active_admin big, body.active_admin cite, body.active_admin code, body.active_admin del, body.active_admin dfn, body.active_admin em, body.active_admin font, body.active_admin img, body.active_admin ins, body.active_admin kbd, body.active_admin q, body.active_admin s, body.active_admin samp, body.active_admin small, body.active_admin strike, body.active_admin strong, body.active_admin sub, body.active_admin sup, body.active_admin tt, body.active_admin var, body.active_admin dl, body.active_admin dt, body.active_admin dd, body.active_admin ol, body.active_admin ul, body.active_admin li, body.active_admin fieldset, body.active_admin form, body.active_admin label, body.active_admin legend, body.active_admin table, body.active_admin caption, body.active_admin tbody, body.active_admin tfoot, body.active_admin thead, body.active_admin tr, body.active_admin th, body.active_admin td {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+
+body.active_admin .panel_contents table th {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #CCCCCC;
+    box-shadow: none;
+    color: #5E6469;
+    padding-top: 10px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    text-transform: uppercase;
+}
+body.active_admin thead th {
+    background: none repeat scroll 0 0 #C3D9FF;
+}
+body.active_admin th, body.active_admin td, body.active_admin caption {
+    padding: 4px 10px 4px 5px;
+}
+body.active_admin th {
+    font-weight: bold;
+}
+body.active_admin caption, body.active_admin th, body.active_admin td {
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+table.reference th {
+    background-color: #555555 !important;
+    border: 1px solid #555555 !important;
+    color: #FFFFFF !important;
+    padding: 3px !important;
+    text-align: left !important;
+    vertical-align: top !important;
+}
+
+table.reference tr:nth-child(2n+1) {
+    background-color: #F1F1F1 !important;
+}
+
+table.reference tr:nth-child(2n) {
+    background-color: #FFFFFF !important;
+    }
+				
+				table.reference td {
+    border: 1px solid #D4D4D4 !important;
+    padding: 7px 5px !important;
+    vertical-align: top !important;
+}
