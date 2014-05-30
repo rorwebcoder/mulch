@@ -15,6 +15,9 @@
           <li id="categories" class="<%=params["controller"] == "admin/categories" ? 'current' : '' %>">
 										<%= link_to "Categories", admin_categories_path %>
 								</li>
+								<li id="categories" class="<%=params["controller"] == "admin/sub_categories" ? 'current' : '' %>">
+										<%= link_to "Sub Categories", admin_sub_categories_path %>
+								</li>
           <li id="users" class="<%=params["controller"] == "admin/users" ? 'current' : ''%>"><a href="/admin/users">Users</a></li>
         </ul>
         <p id="utility_nav" class="header-item"></p>

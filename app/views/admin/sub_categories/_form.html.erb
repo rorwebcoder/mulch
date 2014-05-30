@@ -1,0 +1,39 @@
+<%= form_for @sub_category, :url => (action == "new") ? admin_sub_categories_path : admin_sub_category_path do |f| %>
+		<%# if params[:action] == "create" %>
+				<%= render 'admin/errors/error_message', model: @sub_category %>
+		<%# end %>
+  <p>
+
+    <%= f.label :category_id %><br />
+				<%= f.select :category_id,Category.all.collect {|p| [ p.name, p.id ] }, :prompt => 'Select Category' %>
+  </p>  
+<br/>		
+		 <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+		<br/>
+		<br />
+
+  <p><%= f.submit "Submit" ,:id=>"sub_category_submit"%></p>
+<% end %>
+
+<script>
+//~ $("#sub_category_submit")
+
+//~ $( "#sub_category_submit" ).click(function() {
+//~ if ($("#sub_category_category_id option:selected").val() == "")
+//~ {
+//~ alert("Please select category")
+//~ }
+//~ else
+//~ {
+//~ $("#new_sub_category").submit()
+//~ }
+//~ });
+</script>

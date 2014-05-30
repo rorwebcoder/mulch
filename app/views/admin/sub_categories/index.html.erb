@@ -1,0 +1,57 @@
+ 
+<%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Sub Categories"} %>
+		
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+                  <h3>Sub Category List<span style="float:right"><%= link_to "Add Sub Category", new_admin_sub_category_path %></span></h3>
+
+                  <div class="panel_contents">
+                    <div>
+																				<% if @sub_categories.blank? %>
+																						<table style="width:100%" class="reference">
+																									<tbody>
+																											<tr>
+																											<td>No Sub Category added yet.</td>
+																											</tr>
+																											<tr>
+																											<td><%= link_to "Add Sub Category", new_admin_sub_category_path %></td>
+																											</tr>
+																										</tbody>
+																						</table>
+																				<% else %>
+																				<table style="width:100%" class="reference">
+																									<tbody>
+																									<tr>
+																										<th>Name</th>
+																										<th>Description</th>		
+																										<th>Category</th>
+																										<th>Actions</th>
+																									</tr>
+																									<% @sub_categories.each do |sub_category| %>
+																									<tr>
+																										<td><%= sub_category.name %></td>
+																										<td><%= sub_category.description %></td>		
+																										<td><%= sub_category.category.name%></td>
+																										<td>
+																												<%= link_to "Edit", edit_admin_sub_category_path(sub_category) %> | 
+																												<%= link_to "Delete", admin_sub_category_path(sub_category), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
+																										</td>
+																									</tr>
+																									<%end%>
+																								</tbody>
+																						</table>
+																				<% end %>
+ 
+</div>
+                    <div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>
