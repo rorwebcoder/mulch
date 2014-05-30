@@ -1,0 +1,59 @@
+ 
+<%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Inner Categories"} %>
+		
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+                  <h3>Inner Category List<span style="float:right"><%= link_to "Add Inner Category", new_admin_inner_category_path %></span></h3>
+
+                  <div class="panel_contents">
+                    <div>
+																				<% if @inner_categories.blank? %>
+																						<table style="width:100%" class="reference">
+																									<tbody>
+																											<tr>
+																											<td>No Inner Category added yet.</td>
+																											</tr>
+																											<tr>
+																											<td><%= link_to "Add Inner Category", new_admin_inner_category_path %></td>
+																											</tr>
+																										</tbody>
+																						</table>
+																				<% else %>
+																				<table style="width:100%" class="reference">
+																									<tbody>
+																									<tr>
+																										<th>Inner Category Name</th>
+																										<th>Description</th>		
+																										<th>Category</th>
+																										<th>Sub Category</th>
+																										<th>Actions</th>
+																									</tr>
+																									<% @inner_categories.each do |inner_category| %>
+																									<tr>
+																										<td><%= inner_category.name %></td>
+																										<td><%= inner_category.description %></td>		
+																										<td><%= inner_category.sub_category.category.name%></td>
+																										<td><%= inner_category.sub_category.name%></td>
+																										<td>
+																												<%= link_to "Edit", edit_admin_inner_category_path(inner_category) %> | 
+																												<%= link_to "Delete", admin_inner_category_path(inner_category), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
+																										</td>
+																									</tr>
+																									<%end%>
+																								</tbody>
+																						</table>
+																				<% end %>
+ 
+</div>
+                    <div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>

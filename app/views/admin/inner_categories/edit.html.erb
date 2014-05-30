@@ -1,0 +1,25 @@
+ 
+<%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Edit Inner Category"} %>
+		
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+                  <h3>Update Inner Category</h3>
+                  <div class="panel_contents">
+                    <div>
+																		<%= render :partial => 'form', :locals => { :action => "edit" } %>
+																		<br/>
+																		<br/>
+																		<p><%= link_to "Back to Inner Categories", admin_inner_categories_path %></p>
+																</div>
+														<div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>
