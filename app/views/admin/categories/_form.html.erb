@@ -1,0 +1,23 @@
+<%= form_for @category, :url => (action == "new") ? admin_categories_path : admin_category_path do |f| %>
+		<%# if params[:action] == "create" %>
+				<%= render 'admin/errors/error_message', model: @category %>
+		<%# end %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+		<br/>
+		
+		<p>
+				<%= f.label "Public?" %>
+				<%= f.check_box :is_public, {}, 1, 0 %>
+		</p>
+		<br />
+
+  <p><%= f.submit "Submit" %></p>
+<% end %>

@@ -12,7 +12,9 @@
         <h1 id="site_title" class="site_title">Mulch Admin</h1>
         <ul id="tabs" class="header-item">
           <li id="home" class="<%=params["controller"] == "admin/home" ? 'current' : ''%>"><a href="/admin/home">Home</a></li>
-          <li id="dashboard"><a href="#">Category</a></li>
+          <li id="categories" class="<%=params["controller"] == "admin/categories" ? 'current' : '' %>">
+										<%= link_to "Categories", admin_categories_path %>
+								</li>
           <li id="users" class="<%=params["controller"] == "admin/users" ? 'current' : ''%>"><a href="/admin/users">Users</a></li>
         </ul>
         <p id="utility_nav" class="header-item"></p>

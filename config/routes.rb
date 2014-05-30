@@ -19,6 +19,7 @@ Mulch::Application.routes.draw do
     resource :home, :controller => "home" do
     end
     resources :users
+    resources :categories
   end
   
   
