@@ -1,7 +1,16 @@
 <%= form_for @service, :url => (action == "new") ? admin_services_path : admin_service_path do |f| %>
 		
 		<%= render 'admin/errors/error_message', model: @service %>
-		
+		  <p>
+    <%= f.label :inner_category_id %><br />
+			<%= f.select :user_id,User.all.collect {|u| [ u.name.blank? ? u.email : u.name, u.id ] }, :prompt => 'Select User' %>
+			  </p>  
+		<br/>		
+		  <p>
+    <%= f.label :inner_category_id %><br />
+				<%= f.select :inner_category_id,InnerCategory.all.collect {|p| [ p.name, p.id ] }, :prompt => 'Select Inner Category' %>
+  </p>  
+<br/>		
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>

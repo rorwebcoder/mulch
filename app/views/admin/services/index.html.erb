@@ -24,7 +24,8 @@
 																									<tbody>
 																									<tr>
 																										<th>Title</th>
-																										<th>Description</th>		
+																										<th>User</th>
+																										<th>Short Description</th>		
 																										<th>Response Time</th>
 																										<th>Deliverable Days</th>
 																										<th>Published</th>
@@ -33,6 +34,7 @@
 																									<% @services.each do |service| %>
 																									<tr>
 																										<td><%= service.title %></td>
+																										<td><%= service.user.name.blank? ? service.user.email : service.user.name %></td>
 																										<td><%= service.short_desc %></td>		
 																										<td><%= service.response_time %></td>		
 																										<td><%= service.deliverable_days %></td>		

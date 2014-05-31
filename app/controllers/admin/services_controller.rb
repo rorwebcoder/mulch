@@ -10,6 +10,37 @@ class Admin::ServicesController < ApplicationController
 				@service = Service.new
 		end
 		
+		def create
+				@service = Service.create(params[:service])
+				if @service.save
+						flash[:success] = "Service created successfully."
+						redirect_to admin_services_path
+				else
+						render 'new'
+				end
+		end
+		
+ def edit
+		end
+		
+		def update
+				if @service.update_attributes(params[:service])
+						flash[:success] = "Service updated successfully."
+						redirect_to admin_services_path
+				else
+						render 'edit'
+				end
+		end
+		
+		def show
+		end
+		
+		def destroy
+				@service.destroy
+				flash[:success] = "Service deleted successfully."
+				redirect_to admin_services_path
+		end
+		
 		private		
 		def valid_record
 				return redirect_to admin_services_path if !Service.exists?(params[:id])
