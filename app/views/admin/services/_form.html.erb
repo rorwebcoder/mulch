@@ -1,0 +1,41 @@
+<%= form_for @service, :url => (action == "new") ? admin_services_path : admin_service_path do |f| %>
+		
+		<%= render 'admin/errors/error_message', model: @service %>
+		
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label 'Short Description' %><br />
+    <%= f.text_area :short_desc, :size => "50x3" %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label 'Long Description' %><br />
+    <%= f.text_area :long_desc, :size => "50x3" %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label :response_time %><br />
+    <%= f.text_field :response_time %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label :cost %><br />
+    <%= f.text_field :cost %>
+  </p>
+		<br/>
+		<p>
+    <%= f.label :deliverable_days %><br />
+    <%= f.text_field :deliverable_days %>
+  </p>
+		<br/>
+		<p>
+				<%= f.label "Published ?" %>
+				<%= f.check_box :is_published, {}, 1, 0 %>
+		</p>
+		<br />
+  <p><%= f.submit "Submit" %></p>
+<% end %>

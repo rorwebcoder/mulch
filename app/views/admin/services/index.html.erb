@@ -1,0 +1,60 @@
+ 
+<%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Services"} %>
+		
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+														<h3>Service List<span style="float:right"><%= link_to "Add Service", new_admin_service_path %></span></h3>
+                  <div class="panel_contents">
+                    <div>
+																				<% if @services.blank? %>
+																						<table style="width:100%" class="reference">
+																									<tbody>
+																											<tr>
+																											<td>No service added yet.</td>
+																											</tr>
+																											<tr>
+																											<td><%= link_to "Add Service", new_admin_service_path %></td>
+																											</tr>
+																										</tbody>
+																						</table>
+																				<% else %>
+																				<table style="width:100%" class="reference">
+																									<tbody>
+																									<tr>
+																										<th>Title</th>
+																										<th>Description</th>		
+																										<th>Response Time</th>
+																										<th>Deliverable Days</th>
+																										<th>Published</th>
+																										<th>Actions</th>
+																									</tr>
+																									<% @services.each do |service| %>
+																									<tr>
+																										<td><%= service.title %></td>
+																										<td><%= service.short_desc %></td>		
+																										<td><%= service.response_time %></td>		
+																										<td><%= service.deliverable_days %></td>		
+																										<td><%= service.is_published ? "Published" : "Pending" %></td>
+																										<td>
+																												<%= link_to "Edit", edit_admin_service_path(service) %> | 
+																												<%= link_to "Delete", admin_service_path(service), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
+																										</td>
+																									</tr>
+																									<%end%>
+																								</tbody>
+																						</table>
+																				<% end %>
+ 
+</div>
+                    <div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>

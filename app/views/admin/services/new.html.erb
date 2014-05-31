@@ -1,0 +1,25 @@
+ 
+<%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "New Service"} %>
+		
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+                  <h3>Create Service</h3>
+                  <div class="panel_contents">
+                    <div>
+																		<%= render :partial => 'form', :locals => { :action => "new" } %>
+																		<br/>
+																		<br/>
+																		<p><%= link_to "Back to Services", admin_services_path %></p>
+																</div>
+														<div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>

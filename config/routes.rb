@@ -22,6 +22,7 @@ Mulch::Application.routes.draw do
     resources :categories
     resources :sub_categories
     resources :inner_categories
+    resources :services
   end
   
   

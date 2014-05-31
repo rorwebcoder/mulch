@@ -22,6 +22,9 @@
 										<%= link_to "Inner Categories", admin_inner_categories_path %>
 								</li>
           <li id="users" class="<%=params["controller"] == "admin/users" ? 'current' : ''%>"><a href="/admin/users">Users</a></li>
+          <li id="services" class="<%=params["controller"] == "admin/services" ? 'current' : '' %>">
+										<%= link_to "Services", admin_services_path %>
+								</li>
         </ul>
         <p id="utility_nav" class="header-item"></p>
 								
