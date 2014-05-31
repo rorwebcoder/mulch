@@ -58,3 +58,6 @@ gem 'simple_form'
 
 # To use debugger
 # gem 'debugger'
+
+# Paperclip for media upload
+gem "paperclip", "~> 4.1"
