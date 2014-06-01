@@ -7,15 +7,23 @@ class Admin::ServicesController < ApplicationController
 		end
 		
 		def new
-				@service = Service.new
+				@service = Service.new(:user_id => current_user.id)
+				@categories = Category.all
+				@sub_categories = []
+				@inner_categories = []
 		end
 		
 		def create
-				@service = Service.create(params[:service])
+				@service = Service.create(params[:service].update({:user_id => current_user.id}))
 				if @service.save
 						flash[:success] = "Service created successfully."
 						redirect_to admin_services_path
 				else
+						@categories = Category.all
+						@category = Category.find(params[:category])
+						@sub_categories = @category ? @category.sub_categories : []
+						@sub_category = SubCategory.find(params[:sub_category])
+						@inner_categories = @sub_category ? @sub_category.inner_categories : []
 						render 'new'
 				end
 		end
@@ -24,7 +32,7 @@ class Admin::ServicesController < ApplicationController
 		end
 		
 		def update
-				if @service.update_attributes(params[:service])
+				if @service.update_attributes(params[:service].update({:user_id => current_user.id}))
 						flash[:success] = "Service updated successfully."
 						redirect_to admin_services_path
 				else
@@ -39,6 +47,17 @@ class Admin::ServicesController < ApplicationController
 				@service.destroy
 				flash[:success] = "Service deleted successfully."
 				redirect_to admin_services_path
+		end
+		
+		# Method defined to handle ajax request to populate sub category, inner category.
+		def populate_category
+				if params[:purpose] == "category"
+						category = Category.find(params[:category_id])
+						@sub_categories = category.sub_categories
+				elsif params[:purpose] == "sub_category"
+						sub_category = SubCategory.find(params[:category_id])
+						@inner_categories = sub_category.inner_categories
+				end
 		end
 		
 		private		

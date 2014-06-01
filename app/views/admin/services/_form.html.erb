@@ -2,15 +2,25 @@
 		
 		<%= render 'admin/errors/error_message', model: @service %>
 		  <p>
-    <%= f.label :inner_category_id %><br />
-			<%= f.select :user_id,User.all.collect {|u| [ u.name.blank? ? u.email : u.name, u.id ] }, :prompt => 'Select User' %>
+    <%#= f.label 'Select User' %><br />
+			<%#= f.select :user_id,User.all.collect {|u| [ u.name.blank? ? u.email : u.name, u.id ] }, :prompt => 'Select User' %>
 			  </p>  
 		<br/>		
 		  <p>
-    <%= f.label :inner_category_id %><br />
-				<%= f.select :inner_category_id,InnerCategory.all.collect {|p| [ p.name, p.id ] }, :prompt => 'Select Inner Category' %>
+    <%= f.label 'Category' %><br />
+				<%= select_tag "category", options_from_collection_for_select(@categories, "id", "name", params[:category]), :prompt => "Select Category" %>
   </p>  
-<br/>		
+		<br/>		
+		  <p>
+    <%= f.label 'SubCategory' %><br />
+				<%= select_tag "sub_category", options_from_collection_for_select(@sub_categories, "id", "name", params[:sub_category]), :prompt => "Select SubCategory" %>
+  </p>  
+		<br/>		
+		  <p>
+    <%= f.label 'InnerCategory' %><br />
+				<%= f.select :inner_category_id, @inner_categories.collect {|ic| [ ic.name, ic.id ] }, :prompt => 'Select InnerCategory' %>
+  </p>  
+		<br/>		
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
