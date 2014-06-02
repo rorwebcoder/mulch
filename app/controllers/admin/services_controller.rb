@@ -20,9 +20,9 @@ class Admin::ServicesController < ApplicationController
 						redirect_to admin_services_path
 				else
 						@categories = Category.all
-						@category = Category.find(params[:category])
+						@category = Category.find(params[:category]) if Category.exists?(params[:category])
 						@sub_categories = @category ? @category.sub_categories : []
-						@sub_category = SubCategory.find(params[:sub_category])
+						@sub_category = SubCategory.find(params[:sub_category]) if SubCategory.exists?(params[:sub_category])
 						@inner_categories = @sub_category ? @sub_category.inner_categories : []
 						render 'new'
 				end
