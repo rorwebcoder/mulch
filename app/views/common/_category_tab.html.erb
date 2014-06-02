@@ -2,49 +2,26 @@
    <div class="inner">
       <div class="main-cat-list-wrap active">
          <ul class="main-cat-list">
+<%categories_home_display.each do |cat_disp| %>
             <li>
-               <a data-gtm-label="graphics-design" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/graphics-design">Graphics &amp; Design</a>
-            </li>
-            <li>
-               <a data-gtm-label="online-marketing" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/online-marketing">Online Marketing</a>
-            </li>
-            <li>
-               <a data-gtm-label="writing-translation" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/writing-translation">Writing &amp; Translation</a>
-            </li>
-            <li>
-               <a data-gtm-label="video-animation" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/video-animation">Video &amp; Animation</a>
-            </li>
-            <li>
-               <a data-gtm-label="music-audio" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/music-audio">Music &amp; Audio</a>
-            </li>
-            <li>
-               <a data-gtm-label="programming-tech" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/programming-tech">Programming &amp; Tech</a>
-            </li>
-            <li class="cat-list-small">
-               <a data-gtm-label="gifts" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/gifts">Gifts</a>&nbsp;
-            </li>
+               <a data-gtm-label="graphics-design" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="#"><%=cat_disp.name%></a>
+            </li>    
+												
+<%end%>
+   <%if categories_count > 7%>         
             <li class="cat-list-dropdown">
                <span>More</span>
                <div class="unnecessary-firefox-wrapper">
                   <ul class="menu-exp">
+																		<%categories_home_more.each do |c_more|%>
                      <li>
-                        <a data-gtm-label="advertising" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/advertising">Advertising</a>
+                        <a data-gtm-label="advertising" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="#"><%=c_more.name%></a>
                      </li>
-                     <li>
-                        <a data-gtm-label="business" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/business">Business</a>
-                     </li>
-                     <li>
-                        <a data-gtm-label="lifestyle" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/lifestyle">Lifestyle</a>
-                     </li>
-                     <li>
-                        <a data-gtm-label="fun-bizarre" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/fun-bizarre">Fun &amp; Bizarre</a>
-                     </li>
-                     <li>
-                        <a data-gtm-label="other" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="/categories/other">Other</a>
-                     </li>
+																				<%end%>
                   </ul>
                </div>
             </li>
+		<%end%>
          </ul>
       </div>
    </div>
