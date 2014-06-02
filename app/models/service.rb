@@ -1,5 +1,5 @@
 class Service < ActiveRecord::Base
-  attr_accessible :title, :short_desc, :long_desc, :response_time, :cost, :deliverable_days, :inner_category_id,:user_id,:is_published
+  attr_accessible :title, :short_desc, :long_desc, :response_time, :cost, :deliverable_days, :inner_category_id, :user_id, :is_published
   
   # Associations
   has_one :attachment, as: :attachable

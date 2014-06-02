@@ -1,5 +1,6 @@
 class Admin::ServicesController < ApplicationController
 		layout 'admin_layout'
+		before_filter :custom_auth_user
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
@@ -28,7 +29,14 @@ class Admin::ServicesController < ApplicationController
 				end
 		end
 		
- def edit
+		def edit
+				@category = @service.category.sub_category.category
+				@sub_category = @service.category.sub_category
+				params[:category] = @category.id
+				params[:sub_category] = @sub_category.id
+				@categories = Category.all
+				@sub_categories = @category.sub_categories
+				@inner_categories = @sub_category.inner_categories
 		end
 		
 		def update
@@ -36,6 +44,11 @@ class Admin::ServicesController < ApplicationController
 						flash[:success] = "Service updated successfully."
 						redirect_to admin_services_path
 				else
+						@categories = Category.all
+						@category = Category.find(params[:category]) if Category.exists?(params[:category])
+						@sub_categories = @category ? @category.sub_categories : []
+						@sub_category = SubCategory.find(params[:sub_category]) if SubCategory.exists?(params[:sub_category])
+						@inner_categories = @sub_category ? @sub_category.inner_categories : []
 						render 'edit'
 				end
 		end
@@ -64,5 +77,9 @@ class Admin::ServicesController < ApplicationController
 		def valid_record
 				return redirect_to admin_services_path if !Service.exists?(params[:id])
 				@service = Service.find(params[:id])
+		end
+		
+		def custom_auth_user
+				return redirect_to root_path if !user_signed_in?
 		end
 end
