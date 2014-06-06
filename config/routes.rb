@@ -32,6 +32,11 @@ Mulch::Application.routes.draw do
   
   resources :home
   resources :users
+  resources :services  do
+      collection do
+        get 'start_service'
+      end
+    end
   # Sample resource route with options:
   #   resources :products do
   #     member do
