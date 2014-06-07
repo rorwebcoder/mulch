@@ -1,0 +1,552 @@
+<div class="main-content">
+                                        
+                    <div class="action-bar-gig container-fluid" id="action-bar" style="top: 148px;">
+                        <div class="row-fluid">
+                            <div class="span9">
+
+                                <div class="action-steps cf">
+
+                                    <div data-timeline="general" class="step ca-orange current-step">
+                                        <h5 class="with-arrow">&nbsp;</h5>
+                                        <p>
+                                            Set Up<br>Your Gig
+                                        </p>
+                                    </div>
+
+                                    <div data-timeline="upload-video" class="step ca-grey">
+                                        <h5 class="with-check">&nbsp;</h5>
+                                        <p>
+                                            Upload<br>Video
+                                        </p>
+                                    </div>
+
+                                    
+
+                                    <div data-timeline="shipping" class="step ca-grey">
+                                        <h5 class="with-check">&nbsp;</h5>
+                                        <p>
+                                            Add Shipping<br>Charges
+                                        </p>
+                                    </div>
+
+                                    <div data-timeline="publish" class="step ca-grey">
+                                        <h5 class="with-check">&nbsp;</h5>
+                                        <p>
+                                            Publish &amp;<br>Promote
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="db-container container-fluid">
+                        <div class="row-fluid">
+
+                            <section class="span9 db-content db-content-edit-gig">
+                                <div class="db-content-inner">
+
+                                    <article class="db-edit-gig">
+
+                                        <header class="db-header header-nobot cf">
+                                            <h1>
+                                                Create a new Service
+                                                 
+                                            </h1>
+                                        </header>
+
+                                        <div class="edit-gig-form-wrap">
+																																								
+																																								<%= form_for @service, :url => (params[:action] == "new") ?  services_path :  service_path do |f| %>
+                                           
+
+    
+                <section data-action-text="Save &amp; Continue" data-action="submit" class="gig-edit-form-section" id="gig-edit-general">
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_title">Service Title</label>
+                    </div>
+                    <div id="js-gig-title-wrap" class="input-wrap gig-edit-title-wrap">
+                        <textarea rows="2" placeholder="do something I'm really good at" name="service[title]" id="gig_title" data-locale="null" cols="40" class="gig-title-text" style="text-indent: 87px;" maxlength="80"></textarea>
+                        <div class="char-count"><em>13</em> / 80 max</div>
+                        <div class="char-count-desc" style="color: rgb(255, 77, 77);">Too Short</div>
+                    <span class="gig-before-title">I will</span></div>
+                    <aside class="gig-tooltip">
+                        <figure>
+                            <figcaption>
+                                <h3>Describe your Gig.</h3>
+                                <p>This is your Gig title. Choose wisely, you can only use 80 characters.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                <div class="form-row ">
+                    <div class="label-wrap padding-top">
+                        <label for="gig_category_id" class="">Category</label>
+                    </div>
+                    <div class="input-wrap gig-edit-category-wrap general-form-field-wrap">
+
+                        <div data-field-name="gig[category_id]" class="fake-dropdown fake-dropdown-real gig-category-dropdown" style="visibility: visible;"><a data-toggle="dropdown" class="dropdown-toggle" href="#" style="width: 191px;">Graphics &amp; Design</a><ul role="menu" class="dropdown-menu" style="top: -2px; width: 231px;"><li><a data-field-value="1" href="/">Fun &amp; Bizarre</a></li><li><a data-field-value="2" href="/">Online Marketing</a></li><li><a data-field-value="3" href="/">Graphics &amp; Design</a></li><li><a data-field-value="4" href="/">Advertising</a></li><li><a data-field-value="5" href="/">Writing &amp; Translation</a></li><li><a data-field-value="7" href="/">Lifestyle</a></li><li><a data-field-value="8" href="/">Business</a></li><li><a data-field-value="10" href="/">Programming &amp; Tech</a></li><li><a data-field-value="11" href="/">Other</a></li><li><a data-field-value="12" href="/">Music &amp; Audio</a></li><li><a data-field-value="15" href="/">Gifts</a></li><li><a data-field-value="20" href="/">Video &amp; Animation</a></li></ul></div>
+
+                        <div data-field-name="gig[sub_category_id]" class="fake-dropdown fake-dropdown-real gig-sub-category-dropdown js-gig-edit-subcat" style="visibility: visible;"><a data-toggle="dropdown" class="dropdown-toggle" href="#" style="width: 242px;" data-min-width="160">SELECT A SUBCATEGORY</a><ul role="menu" class="dropdown-menu" style="top: -2px; width: 282px;"><li><a data-field-value="48" href="/">Cartoons &amp; Caricatures</a></li><li><a data-field-value="49" href="/">Logo Design</a></li><li><a data-field-value="50" href="/">Illustration</a></li><li><a data-field-value="51" href="/">Ebook Covers &amp; Packages</a></li><li><a data-field-value="52" href="/">Web Design &amp; UI</a></li><li><a data-field-value="53" href="/">Photography &amp; Photoshopping</a></li><li><a data-field-value="54" href="/">Presentation Design</a></li><li><a data-field-value="55" href="/">Flyers &amp; Brochures </a></li><li><a data-field-value="56" href="/">Business Cards</a></li><li><a data-field-value="57" href="/">Banners &amp; Headers</a></li><li><a data-field-value="58" href="/">Architecture</a></li><li><a data-field-value="119" href="/">Landing Pages</a></li><li><a data-field-value="122" href="/">Other</a></li></ul></div>
+
+                        <input type="hidden" value="3" id="gig[category_id]" name="gig[category_id]">
+                        <input type="hidden" id="gig[sub_category_id]" name="gig[sub_category_id]" data-no-sub-cat="false" value="">
+
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure class="arr-top">
+                            <figcaption>
+                                <h3>Where will your Gig end up?</h3>
+                                <p>Please choose the category and sub-category most suitable for your Gig.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip7"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                    <div class="form-row js-cover-photo-row">
+                        <div class="label-wrap">
+                            <label for="gig_cover" class=""><em>new</em> <br> Cover Photo</label>
+                        </div>
+                        <div class="input-wrap">
+                            <div data-original="" data-cropped="" class="cover-photo-upload huge-photo-upload js-huge-photo-upload">
+                                
+                                <div class="huge-photo-upload-wrap ">
+                                    <div class="btn-upload-cover">
+                                        <div id="gig-edit-upload-cover" class="js-cover-photo-huge-upload">
+                                            <input type="hidden" value="" name="gig[cover_scaling_ratio]">
+                                            <input type="hidden" value="" name="gig[cover_crop_coordinates]">
+                                            <input type="hidden" value="" name="gig[delete_cover]">
+                                                <div class="uploadifive-button .js-cover-photo-huge-upload btn-standard btn-attach-files" id="uploadifive-gig-create-huge-photo" style="height: auto; overflow: hidden; position: relative; text-align: center; width: auto;">browse...<input type="file" id="gig-create-huge-photo" class="hidden inp-uploadify" style="display: none;"><input type="file" class="uploadifive-input" style="opacity: 0; position: absolute; right: -3px; top: -3px; z-index: 999;"></div>
+                                                <div class="js-uploadifyQueue hidden" id="gig-create-huge-photo-queue"></div>
+                                        </div>
+                                    </div>
+                                    <small><em></em>Watch the <a href="#" class="js-cover-guidelines">Guidelines Video</a></small>
+                                    <small class="guidelines"><strong>JPEG</strong> file, <strong>2 MB</strong> Max, you own the <strong>copyrights</strong></small>
+                                </div>
+
+                                <div class="huge-photo-info">
+                                    <a class="delete js-cover-delete">Delete</a>
+                                    <a class="edit js-cover-edit">Edit</a>
+                                </div>
+                                <div class="huge-photo-disabled hidden">
+                                    <span>Cover photos not available in this category</span>
+                                </div>
+                            </div>
+                        </div>
+                        <aside class="gig-tooltip">
+                            <figure>
+                                <figcaption>
+                                    <h3>Cover Photo</h3>
+                                    <p>This is the beautiful huge photo at the top of your Gig page. Wow your customers.</p>
+                                </figcaption>
+                                <div class="gig-tooltip-img gig-tooltip12"></div>
+                                <h3 class="with-padding">Guidelines</h3>
+                                <ul>
+                                    <li>Please, no ads. This is not a banner.</li>
+                                    <li>Do not add text to your photo.</li>
+                                    <li>JPEG format, 1100x260 pixels, 2 MB max.</li>
+                                    <li>You must own the image copyrights.</li>
+                                </ul>
+                            </figure>
+                        </aside>
+                    </div>
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_photo" class="">Gig Gallery</label>
+                        <input type="hidden" id="gig-edit-fileInput1-remove" name="gig[delete_photo]">
+                        <input type="hidden" id="gig-edit-fileInput2-remove" name="gig[delete_photo2]">
+                        <input type="hidden" id="gig-edit-fileInput3-remove" name="gig[delete_photo3]">
+                    </div>
+                    <div class="input-wrap">
+                        <div class="cover-photo-upload-multi js-cover-photo-upload-multi hidden">
+
+                            <figure class="cover-photo-holder">
+                                <figcaption class="cover-photo-info">
+                                    <small class="js-file-name"></small>
+                                    <a class="delete">Delete</a>
+                                </figcaption>
+                            </figure>
+
+                            <ul class="cover-photo-btns">
+                                    <li data-field-id="#gig-edit-fileInput1" data-active="false"></li>
+
+                                    <li data-field-id="#gig-edit-fileInput2" data-active="false"></li>
+
+                                    <li data-field-id="#gig-edit-fileInput3" data-active="false"></li>
+                            </ul>
+                        </div>
+
+                        <div class="cover-photo-upload js-cover-photo-upload ">
+                            <div class="btn-upload-cover">
+
+                                    <div class="uploadifive-button .js-cover-photo-upload btn-standard btn-attach-files" id="uploadifive-gig-create-images" style="height: auto; overflow: hidden; position: relative; text-align: center; width: auto;">browse...<input type="file" id="gig-create-images" class="hidden inp-uploadify" style="display: none;"><input type="file" class="uploadifive-input" style="opacity: 0; position: absolute; right: -3px; top: -3px; z-index: 999;"></div>
+                                    <input type="hidden" value="" name="gig[id]" id="gig-id">
+                                    <div class="js-uploadifyQueue hidden" id="gig-create-images-queue"></div>
+                                <input type="file" name="gig[photo]" id="gig-edit-fileInput1" class="js-gig-edit-upload gig-edit-upload">
+                                <input type="file" name="gig[photo2]" id="gig-edit-fileInput2" class="js-gig-edit-upload gig-edit-upload">
+                                <input type="file" name="gig[photo3]" id="gig-edit-fileInput3" class="js-gig-edit-upload gig-edit-upload">
+                            </div>
+                            <small><strong>JPEG</strong> file, <strong>2 MB</strong> Max, you own the <strong>copyrights</strong></small>
+                        </div>
+
+
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure>
+                            <figcaption>
+                                <h3>Smile, it's photo time!</h3>
+                                <p>Upload photos that describe or relate to your Gig. They can be samples of your work. Allowed: JPEG, 682 pixels wide, 459 pixels height, up to 2 MB.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip3"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_description" class="">Description</label>
+                    </div>
+                    <div id="js-gig-desc-wrap" class="input-wrap gig-edit-desc-input-wrap write-wrap">
+                        <div class="gig-edit-editor-wrap inside"><textarea rows="10" name="gig[description]" id="gig_description" cols="74" class="" style="display: none;"></textarea><input type="hidden" name="_wysihtml5_mode" value="1"><iframe width="0" height="0" frameborder="0" class="wysihtml5-sandbox" security="restricted" allowtransparency="true" marginwidth="0" marginheight="0" style="display: block; background-color: rgb(255, 255, 255); border-collapse: separate; border-color: rgb(119, 119, 119); border-style: none; border-width: 0px; clear: none; float: none; margin: 0px; outline: 0px none rgb(0, 0, 0); outline-offset: 0px; padding: 6px 7px 0px; position: static; top: auto; left: auto; right: auto; bottom: auto; z-index: auto; vertical-align: text-bottom; text-align: start; box-sizing: border-box; box-shadow: none; border-radius: 3px; width: 100%; height: 310px;"></iframe><div style="display: block;" class="gig-edit-toolbar" id="gig-editor-toolbar"><a data-wysihtml5-command-value="h3" data-wysihtml5-command="formatBlock" class="toolbar-btn l-title" href="javascript:;" unselectable="on"></a><a data-wysihtml5-command-value="h4" data-wysihtml5-command="formatBlock" class="toolbar-btn s-title" href="javascript:;" unselectable="on"></a><a data-wysihtml5-command="bold" class="toolbar-btn bold" href="javascript:;" unselectable="on"></a><a data-wysihtml5-command="italic" class="toolbar-btn italic" href="javascript:;" unselectable="on"></a><a data-wysihtml5-command="insertUnorderedList" class="toolbar-btn ul" href="javascript:;" unselectable="on"></a><a data-wysihtml5-command="insertOrderedList" class="toolbar-btn ol" href="javascript:;" unselectable="on"></a><a data-wysihtml5-command-value="u" data-wysihtml5-command="formatInline" class="toolbar-btn strong" href="javascript:;" unselectable="on"></a></div></div>
+                        <div class="gig-edit-desc-desc">
+                            min. 120 chars
+                        </div>
+                        <div class="char-count"><em>0</em> / 1200 Characters</div>
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure>
+                            <figcaption>
+                                <h3>This is your chance to be creative. Explain your Gig.</h3>
+                                <p>Describe what you are offering. Be as detailed as possible so buyers will be able to understand if this meets their needs. Should be at least 120 characters.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip4"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_tag_list" class="">Tags</label>
+                    </div>
+                    <div class="input-wrap gig-edit-tags-input-wrap">
+                        <div id="js-gig-tags" class="gig-edit-tags-wrap general-form-field-wrap">
+                            <textarea rows="2" name="gig[tag_list]" maxlength="100" id="gig_tag_list" cols="74" class="tagstext" style="display: none;"></textarea>
+                            <input type="text" maxlength="20" name="tag-input" class="tag-input"><input type="hidden" name="hidden-tag-input">
+                            <ul class="js-tag-list auto-complete-tags"></ul>
+                        </div>
+                        <div class="gig-edit-tags-desc">
+                            min. three tags separated with commas
+                        </div>
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure class="arr-top">
+                            <figcaption>
+                                <h3>Tags, tags, tags!</h3>
+                                <p>These are keywords related to your Gig. These are important because they help classify your Gig.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip5"></div>
+                        </figure>
+                    </aside>
+                </div>
+                
+
+                <div class="form-row ">
+                    <div class="label-wrap padding-top">
+                        <label for="gig_expected_duration" class="">Duration</label>
+                    </div>
+                    <div class="input-wrap">
+                        <span class="expected-duration-wrap general-form-field-wrap">
+                            Maximum
+                            <div data-field-name="gig[expected_duration]" class="fake-dropdown fake-dropdown-real gig-duration-dropdown" style="visibility: visible;"><a data-autowidth="true" data-toggle="dropdown" data-min-width="45" class="dropdown-toggle" href="#">Select</a><ul role="menu" class="dropdown-menu" style="top: -2px; max-height: 350px; overflow-y: scroll;"><li><a data-field-value="1" href="/">1 DAY</a></li><li><a data-field-value="2" href="/">2 DAYS</a></li><li><a data-field-value="3" href="/">3 DAYS</a></li><li><a data-field-value="4" href="/">4 DAYS</a></li><li><a data-field-value="5" href="/">5 DAYS</a></li><li><a data-field-value="6" href="/">6 DAYS</a></li><li><a data-field-value="7" href="/">7 DAYS</a></li><li><a data-field-value="8" href="/">8 DAYS</a></li><li><a data-field-value="9" href="/">9 DAYS</a></li><li><a data-field-value="10" href="/">10 DAYS</a></li><li><a data-field-value="11" href="/">11 DAYS</a></li><li><a data-field-value="12" href="/">12 DAYS</a></li><li><a data-field-value="13" href="/">13 DAYS</a></li><li><a data-field-value="14" href="/">14 DAYS</a></li><li><a data-field-value="15" href="/">15 DAYS</a></li><li><a data-field-value="16" href="/">16 DAYS</a></li><li><a data-field-value="17" href="/">17 DAYS</a></li><li><a data-field-value="18" href="/">18 DAYS</a></li><li><a data-field-value="19" href="/">19 DAYS</a></li><li><a data-field-value="20" href="/">20 DAYS</a></li><li><a data-field-value="21" href="/">21 DAYS</a></li><li><a data-field-value="22" href="/">22 DAYS</a></li><li><a data-field-value="23" href="/">23 DAYS</a></li><li><a data-field-value="24" href="/">24 DAYS</a></li><li><a data-field-value="25" href="/">25 DAYS</a></li><li><a data-field-value="26" href="/">26 DAYS</a></li><li><a data-field-value="27" href="/">27 DAYS</a></li><li><a data-field-value="28" href="/">28 DAYS</a></li><li><a data-field-value="29" href="/">29 DAYS</a></li></ul></div>
+                            To deliver
+                            <input type="hidden" value="" name="gig[expected_duration]">
+                        </span>
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure class="arr-top">
+                            <figcaption>
+                                <h3>How long will it take you to deliver this Gig?</h3>
+                                <p>Make sure to choose a deadline that you can actually meet. Failing to meet the deadline can cause your order to be cancelled or cause your reputation to drop.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip10"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                    
+                        <div class="form-row">
+                            <div class="label-wrap">
+                                <label for="gig_order_requirement_attributes_body">Instructions <br> for buyer</label>
+                            </div>
+                            <div id="js-gig-reqs-wrap" class="input-wrap">
+                                <textarea rows="10" placeholder="" name="gig[order_requirement_attributes][body]" maxlength="450" id="gig_order_requirement_attributes_body" cols="74" class="text"></textarea>
+
+                                <div class="char-count"><em>0</em> / 450 Characters</div>
+                            </div>
+                            <aside class="gig-tooltip">
+                                <figure>
+                                    <figcaption>
+                                        <h3>What do you need in order to start working on this Gig?</h3>
+                                        <p>Tell the buyer what you expect to receive before you can start working on their order.</p>
+                                    </figcaption>
+                                    <div class="gig-tooltip-img gig-tooltip6"></div>
+                                </figure>
+                            </aside>
+                        </div>
+                </section>
+
+
+                
+    <div class="form-buttons js-form-button js-general">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="/users/usuganya/manage_gigs">Cancel</a>
+        </div>
+    </div>
+
+<%end%>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--STEP2-->
+<form method="post" id="gig-create-video" enctype="multipart/form-data" class="edit-gig create-gig-video" action="/users/usuganya/manage_gigs" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"><input type="hidden" value="ybI7/gbmQBvrzSqZtqDR1+I0La2G0I5Dp0FujcxJFlM=" name="authenticity_token"></div>
+    
+
+                    <section data-action-text="upload video" data-action="progress" class="gig-edit-form-section hidden" id="gig-edit-pre-video">
+                        <h2 class="gig-edit-sec-ttl">Awesome!</h2>
+                        <h3 class="gig-edit-sec-sttl">Did you know that sellers who present their <br> service on video, sell 220% more?</h3>
+                    </section>
+
+                    <section data-action-text="Save &amp; Continue" data-action="progress" class="gig-edit-form-section less-padding hidden" id="gig-edit-upload-video">
+
+                        <div class="video-container-full-width js-video-upload-container" id="gig-edit-video-container">
+
+                            <figure class="cover-photo-holder toolbar-enabled">
+
+                                <figcaption class="cover-photo-info">
+                                    <small class="js-file-name">
+                                    </small>
+                                    
+                                </figcaption>
+
+
+
+                                <div class="process-video">
+
+                                    <img src="//cdnec20.fiverrcdn.com/assets/v2_globals/genral-progress-000-8f2fd8223eea8bd8caafdd9ba4600e3e.gif" alt="Genral-progress-000">
+                                    <br>
+                                    <em>Done. Processing your video...</em><br><span>(may take up to 24 hours).</span>
+
+                                </div>
+
+
+                                <div class="js-uploadifyQueue" id="gig-edit-video-queue"></div>
+
+                            </figure>
+
+                            <div class="cover-photo-upload video-upload">
+                                <div class="btn-upload-cover">
+                                    <div class="uploadifive-button .js-video-upload-container btn-standard btn-attach-files" id="uploadifive-gig-edit-video" style="height: auto; overflow: hidden; position: relative; text-align: center; width: auto;">ATTACH FILES<input type="file" data-upload-path="" data-token="d9b64265d450425ff28b853bd03114cb1b2c6d70" class="inp-uploadify" id="gig-edit-video" name="video[video_asset]" style="display: none;"><input type="file" class="uploadifive-input" style="opacity: 0; position: absolute; right: -3px; top: -3px; z-index: 999;"></div>
+                                </div>
+                                <small>One video file, 50 MB max.</small>
+                            </div>
+
+                        </div>
+
+                        <h3>Video Must Have's</h3>
+                        <ol>
+                            <li><em>10 to 60 seconds max. length.</em></li>
+                            <li><em>Video should contain a shot of yourself presenting your own Gig.</em></li>
+                            <li><em>Mention that your Gig is offered exclusively on Fiverr.com.</em></li>
+                            <li><em>Make sure your video is good quality, you have proper lighting, and your voice is clear.</em></li>
+                            <li><em>You may not use the same video for more than one Gig.</em></li>
+                            <li><em>We do not allow self improvement, getting rich, black hat and other borderline subjects.</em></li>
+                        </ol>
+
+                        <h3>Some Good Examples</h3>
+                        <ul class="gig-video-samples">
+                            <li><iframe width="170" height="120" frameborder="0" src="http://api.dmcloud.net/player/swf/4e5bf73e94a6f629c900461b/5103ffed06361d117404ee8e/share" scrolling="no"></iframe></li>
+                            <li><iframe width="170" height="120" frameborder="0" src="http://api.dmcloud.net/player/swf/4e5bf73e94a6f629c900461b/51829ff606361d464e0002ff/share" scrolling="no"></iframe></li>
+                            <li><iframe width="170" height="120" frameborder="0" src="http://api.dmcloud.net/player/swf/4e5bf73e94a6f629c900461b/4e6654b3f325e17a850000de/share" scrolling="no"></iframe></li>
+                        </ul>
+
+                        <aside class="gig-tooltip">
+                            <figure>
+                                <figcaption>
+                                    <h3>People Love Videos</h3>
+                                    <p>Adding a video of you presenting your Gig is guaranteed to boost your sales. Plus you'll get to be the lead star in your own movie... Sweet!</p>
+                                </figcaption>
+                                <div class="gig-tooltip-img gig-tooltip11"></div>
+                            </figure>
+                        </aside>
+
+                    </section>
+
+    <div class="form-buttons js-form-button hidden js-pre-video">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+            or <a href="#" class="js-skip">skip</a>
+            <small>(you can always add this later)</small>
+        </div>
+    </div>
+
+    <div class="form-buttons js-form-button hidden js-upload-video">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+            or <a href="#" class="js-skip-one">skip</a>
+        </div>
+    </div>
+</form>
+<form method="post" id="gig-create-extras" enctype="multipart/form-data" class="edit-gig create-gig-extras" action="/users/usuganya/manage_gigs" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"><input type="hidden" value="ybI7/gbmQBvrzSqZtqDR1+I0La2G0I5Dp0FujcxJFlM=" name="authenticity_token"></div>
+
+                    
+    <input type="hidden" value="1" name="create_form">
+    <div class="form-buttons js-form-button hidden js-pre-extras">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+            or <a href="#" class="js-skip">skip</a>
+        </div>
+    </div>
+
+    <div class="form-buttons js-form-button hidden js-extras">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+            or <a href="#" class="js-skip-one">skip</a>
+        </div>
+    </div>
+
+</form>
+<form method="post" id="gig-create-shipping" enctype="multipart/form-data" class="edit-gig create-gig-shipping" action="/users/usuganya/manage_gigs" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"><input type="hidden" value="ybI7/gbmQBvrzSqZtqDR1+I0La2G0I5Dp0FujcxJFlM=" name="authenticity_token"></div>
+
+                        <section data-action-text="Save &amp; Continue" data-action="progress" class="gig-edit-form-section hidden" id="gig-edit-shipping">
+                        <h2 class="gig-edit-sec-ttl">
+                            If you are a maker of real things
+                        </h2>
+                        <h3 class="gig-edit-sec-sttl">You might like to know that you can <br> charge extra for physical shipping.</h3>
+                        <h4 class="gig-edit-shipping-check">
+                            <label class="fake-check-green check-text" for="gig_is_shippable">
+                                <input type="hidden" value="0" name="gig[is_shippable]"><input type="checkbox" value="1" name="gig[is_shippable]" id="gig_is_shippable" class="js-shipping-checkbox">
+                                <span class="chk-img"></span>
+                                I ship real stuff and want to charge for it.
+                            </label>
+                        </h4>
+                        <div class="gig-edit-shipping-conf hidden" id="gig-edit-shipping-container" style="">
+                            <div class="form-row shipping-input-wrap">
+                                I charge <div data-field-name="gig[local_shipping_price_p]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;"><a data-toggle="dropdown" class="dropdown-toggle" data-min-width="65" href="#" style="width: 65px;">nothing</a><ul role="menu" class="dropdown-menu" style="top: -2px; width: 105px;"><li><a data-field-value="0.0" href="/">nothing</a></li><li><a data-field-value="1.0" href="/">$0.80</a></li><li><a data-field-value="2.0" href="/">$1.60</a></li><li><a data-field-value="3.0" href="/">$2.40</a></li><li><a data-field-value="4.0" href="/">$3.20</a></li><li><a data-field-value="5.0" href="/">$4.00</a></li><li><a data-field-value="6.0" href="/">$4.80</a></li><li><a data-field-value="7.0" href="/">$5.60</a></li><li><a data-field-value="8.0" href="/">$6.40</a></li><li><a data-field-value="9.0" href="/">$7.20</a></li><li><a data-field-value="10.0" href="/">$8.00</a></li></ul></div> to ship to <div data-field-name="gig[local_shipping_country]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;"><a data-toggle="dropdown" data-autowidth="" class="dropdown-toggle" href="#">Select</a><ul role="menu" class="dropdown-menu" style="top: -2px;"><li><a data-field-value="AC" href="/">Ascension Island</a></li><li><a data-field-value="AD" href="/">Andorra</a></li><li><a data-field-value="AE" href="/">United Arab Emirates</a></li><li><a data-field-value="AF" href="/">Afghanistan</a></li><li><a data-field-value="AG" href="/">Antigua and Barbuda</a></li><li><a data-field-value="AI" href="/">Anguilla</a></li><li><a data-field-value="AL" href="/">Albania</a></li><li><a data-field-value="AM" href="/">Armenia</a></li><li><a data-field-value="AN" href="/">Netherlands Antilles</a></li><li><a data-field-value="AO" href="/">Angola</a></li><li><a data-field-value="AQ" href="/">Antarctica</a></li><li><a data-field-value="AR" href="/">Argentina</a></li><li><a data-field-value="AS" href="/">American Samoa</a></li><li><a data-field-value="AT" href="/">Austria</a></li><li><a data-field-value="AU" href="/">Australia</a></li><li><a data-field-value="AW" href="/">Aruba</a></li><li><a data-field-value="AX" href="/">Aland Islands</a></li><li><a data-field-value="AZ" href="/">Azerbaijan</a></li><li><a data-field-value="A1" href="/">Unknown</a></li><li><a data-field-value="BA" href="/">Bosnia and Herzegovina</a></li><li><a data-field-value="BB" href="/">Barbados</a></li><li><a data-field-value="BD" href="/">Bangladesh</a></li><li><a data-field-value="BE" href="/">Belgium</a></li><li><a data-field-value="BF" href="/">Burkina Faso</a></li><li><a data-field-value="BG" href="/">Bulgaria</a></li><li><a data-field-value="BH" href="/">Bahrain</a></li><li><a data-field-value="BI" href="/">Burundi</a></li><li><a data-field-value="BJ" href="/">Benin</a></li><li><a data-field-value="BL" href="/">Saint Barthelemy</a></li><li><a data-field-value="BM" href="/">Bermuda</a></li><li><a data-field-value="BN" href="/">Brunei</a></li><li><a data-field-value="BO" href="/">Bolivia</a></li><li><a data-field-value="BQ" href="/">Caribbean Netherlands</a></li><li><a data-field-value="BR" href="/">Brazil</a></li><li><a data-field-value="BS" href="/">Bahamas</a></li><li><a data-field-value="BT" href="/">Bhutan</a></li><li><a data-field-value="BV" href="/">Bouvet Island</a></li><li><a data-field-value="BW" href="/">Botswana</a></li><li><a data-field-value="BY" href="/">Belarus</a></li><li><a data-field-value="BZ" href="/">Belize</a></li><li><a data-field-value="CA" href="/">Canada</a></li><li><a data-field-value="CC" href="/">Cocos [Keeling] Islands</a></li><li><a data-field-value="CD" href="/">Congo [DRC]</a></li><li><a data-field-value="CF" href="/">Central African Republic</a></li><li><a data-field-value="CG" href="/">Congo [Republic]</a></li><li><a data-field-value="CH" href="/">Switzerland</a></li><li><a data-field-value="CI" href="/">Ivory Coast</a></li><li><a data-field-value="CK" href="/">Cook Islands</a></li><li><a data-field-value="CL" href="/">Chile</a></li><li><a data-field-value="CM" href="/">Cameroon</a></li><li><a data-field-value="CN" href="/">China</a></li><li><a data-field-value="CO" href="/">Colombia</a></li><li><a data-field-value="CP" href="/">Clipperton Island</a></li><li><a data-field-value="CR" href="/">Costa Rica</a></li><li><a data-field-value="CU" href="/">Cuba</a></li><li><a data-field-value="CV" href="/">Cape Verde</a></li><li><a data-field-value="CW" href="/">Curacao</a></li><li><a data-field-value="CX" href="/">Christmas Island</a></li><li><a data-field-value="CY" href="/">Cyprus</a></li><li><a data-field-value="CZ" href="/">Czech Republic</a></li><li><a data-field-value="DE" href="/">Germany</a></li><li><a data-field-value="DG" href="/">Diego Garcia</a></li><li><a data-field-value="DJ" href="/">Djibouti</a></li><li><a data-field-value="DK" href="/">Denmark</a></li><li><a data-field-value="DM" href="/">Dominica</a></li><li><a data-field-value="DO" href="/">Dominican Republic</a></li><li><a data-field-value="DZ" href="/">Algeria</a></li><li><a data-field-value="EA" href="/">Ceuta and Melilla</a></li><li><a data-field-value="EC" href="/">Ecuador</a></li><li><a data-field-value="EE" href="/">Estonia</a></li><li><a data-field-value="EG" href="/">Egypt</a></li><li><a data-field-value="EH" href="/">Western Sahara</a></li><li><a data-field-value="ER" href="/">Eritrea</a></li><li><a data-field-value="ES" href="/">Spain</a></li><li><a data-field-value="ET" href="/">Ethiopia</a></li><li><a data-field-value="EU" href="/">European Union</a></li><li><a data-field-value="FI" href="/">Finland</a></li><li><a data-field-value="FJ" href="/">Fiji</a></li><li><a data-field-value="FK" href="/">Falkland Islands [Islas Malvinas]</a></li><li><a data-field-value="FM" href="/">Micronesia</a></li><li><a data-field-value="FO" href="/">Faroe Islands</a></li><li><a data-field-value="FR" href="/">France</a></li><li><a data-field-value="GA" href="/">Gabon</a></li><li><a data-field-value="GB" href="/">United Kingdom</a></li><li><a data-field-value="GD" href="/">Grenada</a></li><li><a data-field-value="GE" href="/">Georgia</a></li><li><a data-field-value="GF" href="/">French Guiana</a></li><li><a data-field-value="GG" href="/">Guernsey</a></li><li><a data-field-value="GH" href="/">Ghana</a></li><li><a data-field-value="GI" href="/">Gibraltar</a></li><li><a data-field-value="GL" href="/">Greenland</a></li><li><a data-field-value="GM" href="/">Gambia</a></li><li><a data-field-value="GN" href="/">Guinea</a></li><li><a data-field-value="GP" href="/">Guadeloupe</a></li><li><a data-field-value="GQ" href="/">Equatorial Guinea</a></li><li><a data-field-value="GR" href="/">Greece</a></li><li><a data-field-value="GS" href="/">South Georgia and the South Sandwich Islands</a></li><li><a data-field-value="GT" href="/">Guatemala</a></li><li><a data-field-value="GU" href="/">Guam</a></li><li><a data-field-value="GW" href="/">Guinea-Bissau</a></li><li><a data-field-value="GY" href="/">Guyana</a></li><li><a data-field-value="HK" href="/">Hong Kong</a></li><li><a data-field-value="HM" href="/">Heard Island and McDonald Islands</a></li><li><a data-field-value="HN" href="/">Honduras</a></li><li><a data-field-value="HR" href="/">Croatia</a></li><li><a data-field-value="HT" href="/">Haiti</a></li><li><a data-field-value="HU" href="/">Hungary</a></li><li><a data-field-value="IC" href="/">Canary Islands</a></li><li><a data-field-value="ID" href="/">Indonesia</a></li><li><a data-field-value="IE" href="/">Ireland</a></li><li><a data-field-value="IL" href="/">Israel</a></li><li><a data-field-value="IM" href="/">Isle of Man</a></li><li><a data-field-value="IN" href="/">India</a></li><li><a data-field-value="IO" href="/">British Indian Ocean Territory</a></li><li><a data-field-value="IQ" href="/">Iraq</a></li><li><a data-field-value="IR" href="/">Iran</a></li><li><a data-field-value="IS" href="/">Iceland</a></li><li><a data-field-value="IT" href="/">Italy</a></li><li><a data-field-value="JE" href="/">Jersey</a></li><li><a data-field-value="JM" href="/">Jamaica</a></li><li><a data-field-value="JO" href="/">Jordan</a></li><li><a data-field-value="JP" href="/">Japan</a></li><li><a data-field-value="KE" href="/">Kenya</a></li><li><a data-field-value="KG" href="/">Kyrgyzstan</a></li><li><a data-field-value="KH" href="/">Cambodia</a></li><li><a data-field-value="KI" href="/">Kiribati</a></li><li><a data-field-value="KM" href="/">Comoros</a></li><li><a data-field-value="KN" href="/">Saint Kitts and Nevis</a></li><li><a data-field-value="KP" href="/">North Korea</a></li><li><a data-field-value="KR" href="/">South Korea</a></li><li><a data-field-value="KW" href="/">Kuwait</a></li><li><a data-field-value="KY" href="/">Cayman Islands</a></li><li><a data-field-value="KZ" href="/">Kazakhstan</a></li><li><a data-field-value="LA" href="/">Laos</a></li><li><a data-field-value="LB" href="/">Lebanon</a></li><li><a data-field-value="LC" href="/">Saint Lucia</a></li><li><a data-field-value="LI" href="/">Liechtenstein</a></li><li><a data-field-value="LK" href="/">Sri Lanka</a></li><li><a data-field-value="LR" href="/">Liberia</a></li><li><a data-field-value="LS" href="/">Lesotho</a></li><li><a data-field-value="LT" href="/">Lithuania</a></li><li><a data-field-value="LU" href="/">Luxembourg</a></li><li><a data-field-value="LV" href="/">Latvia</a></li><li><a data-field-value="LY" href="/">Libya</a></li><li><a data-field-value="MA" href="/">Morocco</a></li><li><a data-field-value="MC" href="/">Monaco</a></li><li><a data-field-value="MD" href="/">Moldova</a></li><li><a data-field-value="ME" href="/">Montenegro</a></li><li><a data-field-value="MF" href="/">Saint Martin</a></li><li><a data-field-value="MG" href="/">Madagascar</a></li><li><a data-field-value="MH" href="/">Marshall Islands</a></li><li><a data-field-value="MK" href="/">Macedonia [FYROM]</a></li><li><a data-field-value="ML" href="/">Mali</a></li><li><a data-field-value="MM" href="/">Myanmar [Burma]</a></li><li><a data-field-value="MN" href="/">Mongolia</a></li><li><a data-field-value="MO" href="/">Macau</a></li><li><a data-field-value="MP" href="/">Northern Mariana Islands</a></li><li><a data-field-value="MQ" href="/">Martinique</a></li><li><a data-field-value="MR" href="/">Mauritania</a></li><li><a data-field-value="MS" href="/">Montserrat</a></li><li><a data-field-value="MT" href="/">Malta</a></li><li><a data-field-value="MU" href="/">Mauritius</a></li><li><a data-field-value="MV" href="/">Maldives</a></li><li><a data-field-value="MW" href="/">Malawi</a></li><li><a data-field-value="MX" href="/">Mexico</a></li><li><a data-field-value="MY" href="/">Malaysia</a></li><li><a data-field-value="MZ" href="/">Mozambique</a></li><li><a data-field-value="NA" href="/">Namibia</a></li><li><a data-field-value="NC" href="/">New Caledonia</a></li><li><a data-field-value="NE" href="/">Niger</a></li><li><a data-field-value="NF" href="/">Norfolk Island</a></li><li><a data-field-value="NG" href="/">Nigeria</a></li><li><a data-field-value="NI" href="/">Nicaragua</a></li><li><a data-field-value="NL" href="/">Netherlands</a></li><li><a data-field-value="false" href="/">Norway</a></li><li><a data-field-value="NP" href="/">Nepal</a></li><li><a data-field-value="NR" href="/">Nauru</a></li><li><a data-field-value="NU" href="/">Niue</a></li><li><a data-field-value="NZ" href="/">New Zealand</a></li><li><a data-field-value="OM" href="/">Oman</a></li><li><a data-field-value="PA" href="/">Panama</a></li><li><a data-field-value="PE" href="/">Peru</a></li><li><a data-field-value="PF" href="/">French Polynesia</a></li><li><a data-field-value="PG" href="/">Papua New Guinea</a></li><li><a data-field-value="PH" href="/">Philippines</a></li><li><a data-field-value="PK" href="/">Pakistan</a></li><li><a data-field-value="PL" href="/">Poland</a></li><li><a data-field-value="PM" href="/">Saint Pierre and Miquelon</a></li><li><a data-field-value="PN" href="/">Pitcairn Islands</a></li><li><a data-field-value="PR" href="/">Puerto Rico</a></li><li><a data-field-value="PS" href="/">Palestinian Territories</a></li><li><a data-field-value="PT" href="/">Portugal</a></li><li><a data-field-value="PW" href="/">Palau</a></li><li><a data-field-value="PY" href="/">Paraguay</a></li><li><a data-field-value="QA" href="/">Qatar</a></li><li><a data-field-value="QO" href="/">Outlying Oceania</a></li><li><a data-field-value="RE" href="/">Reunion</a></li><li><a data-field-value="RO" href="/">Romania</a></li><li><a data-field-value="RS" href="/">Serbia</a></li><li><a data-field-value="RU" href="/">Russia</a></li><li><a data-field-value="RW" href="/">Rwanda</a></li><li><a data-field-value="SA" href="/">Saudi Arabia</a></li><li><a data-field-value="SB" href="/">Solomon Islands</a></li><li><a data-field-value="SC" href="/">Seychelles</a></li><li><a data-field-value="SD" href="/">Sudan</a></li><li><a data-field-value="SE" href="/">Sweden</a></li><li><a data-field-value="SG" href="/">Singapore</a></li><li><a data-field-value="SH" href="/">Saint Helena</a></li><li><a data-field-value="SI" href="/">Slovenia</a></li><li><a data-field-value="SJ" href="/">Svalbard and Jan Mayen</a></li><li><a data-field-value="SK" href="/">Slovakia</a></li><li><a data-field-value="SL" href="/">Sierra Leone</a></li><li><a data-field-value="SM" href="/">San Marino</a></li><li><a data-field-value="SN" href="/">Senegal</a></li><li><a data-field-value="SO" href="/">Somalia</a></li><li><a data-field-value="SR" href="/">Suriname</a></li><li><a data-field-value="SS" href="/">South Sudan</a></li><li><a data-field-value="ST" href="/">Sao Tome and Principe</a></li><li><a data-field-value="SV" href="/">El Salvador</a></li><li><a data-field-value="SX" href="/">Sint Maarten</a></li><li><a data-field-value="SY" href="/">Syria</a></li><li><a data-field-value="SZ" href="/">Swaziland</a></li><li><a data-field-value="TA" href="/">Tristan da Cunha</a></li><li><a data-field-value="TC" href="/">Turks and Caicos Islands</a></li><li><a data-field-value="TD" href="/">Chad</a></li><li><a data-field-value="TF" href="/">French Southern Territories</a></li><li><a data-field-value="TG" href="/">Togo</a></li><li><a data-field-value="TH" href="/">Thailand</a></li><li><a data-field-value="TJ" href="/">Tajikistan</a></li><li><a data-field-value="TK" href="/">Tokelau</a></li><li><a data-field-value="TL" href="/">East Timor</a></li><li><a data-field-value="TM" href="/">Turkmenistan</a></li><li><a data-field-value="TN" href="/">Tunisia</a></li><li><a data-field-value="TO" href="/">Tonga</a></li><li><a data-field-value="TR" href="/">Turkey</a></li><li><a data-field-value="TT" href="/">Trinidad and Tobago</a></li><li><a data-field-value="TV" href="/">Tuvalu</a></li><li><a data-field-value="TW" href="/">Taiwan</a></li><li><a data-field-value="TZ" href="/">Tanzania</a></li><li><a data-field-value="UA" href="/">Ukraine</a></li><li><a data-field-value="UG" href="/">Uganda</a></li><li><a data-field-value="UM" href="/">U.S. Outlying Islands</a></li><li><a data-field-value="US" href="/">United States</a></li><li><a data-field-value="UY" href="/">Uruguay</a></li><li><a data-field-value="UZ" href="/">Uzbekistan</a></li><li><a data-field-value="VA" href="/">Vatican City</a></li><li><a data-field-value="VC" href="/">Saint Vincent and the Grenadines</a></li><li><a data-field-value="VE" href="/">Venezuela</a></li><li><a data-field-value="VG" href="/">British Virgin Islands</a></li><li><a data-field-value="VI" href="/">U.S. Virgin Islands</a></li><li><a data-field-value="VN" href="/">Vietnam</a></li><li><a data-field-value="VU" href="/">Vanuatu</a></li><li><a data-field-value="WF" href="/">Wallis and Futuna</a></li><li><a data-field-value="WS" href="/">Samoa</a></li><li><a data-field-value="YE" href="/">Yemen</a></li><li><a data-field-value="YT" href="/">Mayotte</a></li><li><a data-field-value="ZA" href="/">South Africa</a></li><li><a data-field-value="ZM" href="/">Zambia</a></li><li><a data-field-value="ZW" href="/">Zimbabwe</a></li><li><a data-field-value="ZZ" href="/">Unknown Region</a></li></ul></div> and
+                                <div data-field-name="gig[international_shipping_price_p]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;"><a data-toggle="dropdown" class="dropdown-toggle" data-min-width="65" href="#" style="width: 65px;">nothing</a><ul role="menu" class="dropdown-menu" style="top: -2px; width: 105px;"><li><a data-field-value="0.0" href="/">nothing</a></li><li><a data-field-value="1.0" href="/">$0.80</a></li><li><a data-field-value="2.0" href="/">$1.60</a></li><li><a data-field-value="3.0" href="/">$2.40</a></li><li><a data-field-value="4.0" href="/">$3.20</a></li><li><a data-field-value="5.0" href="/">$4.00</a></li><li><a data-field-value="6.0" href="/">$4.80</a></li><li><a data-field-value="7.0" href="/">$5.60</a></li><li><a data-field-value="8.0" href="/">$6.40</a></li><li><a data-field-value="9.0" href="/">$7.20</a></li><li><a data-field-value="10.0" href="/">$8.00</a></li></ul></div> to anywhere else in the world.
+                                <input type="hidden" value="" name="gig[local_shipping_price_p]">
+                                <input type="hidden" value="" name="gig[local_shipping_country]">
+                                <input type="hidden" value="" name="gig[international_shipping_price_p]">
+                            </div>
+
+                        </div>
+                        <aside class="gig-tooltip">
+                            <figure>
+                                <figcaption>
+                                    <h3>Do you ship?</h3>
+                                    <p>If you do, this is the place to define how much you charge for it, locally and internationally. It's optional.</p>
+                                </figcaption>
+                                <div class="gig-tooltip-img gig-tooltip9"></div>
+                            </figure>
+                        </aside>
+                    </section>
+                
+
+    <div class="form-buttons js-form-button hidden js-shipping-actions-toggle js-shipping">
+        <a class="btn-standard-lrg btn-green js-skip-one" href="#">No Thanks</a>
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+        </div>
+    </div>
+    <div class="form-buttons js-form-button hidden js-shipping-actions-toggle js-shipping-save">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+        </div>
+    </div>
+</form>
+<form method="post" id="gig-create-publish" enctype="multipart/form-data" class="edit-gig create-gig-publish" action="/users/usuganya/manage_gigs" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"><input type="hidden" value="ybI7/gbmQBvrzSqZtqDR1+I0La2G0I5Dp0FujcxJFlM=" name="authenticity_token"></div>
+    
+                    <section data-action-text="Publish Gig" data-action="progress" class="gig-edit-form-section hidden" id="gig-edit-publish">
+                        <h2 class="gig-edit-sec-ttl">
+                            Almost there...
+                        </h2>
+                        <h3 class="gig-edit-sec-sttl">Let's publish your Gig and get <br> some buyers rolling in.</h3>
+                    </section>
+
+                    <section data-action-text="Publish Gig" data-action="progress" class="gig-edit-form-section hidden" id="gig-edit-pending">
+                        <h2 class="gig-edit-sec-ttl">
+                            Done.
+                        </h2>
+                        <h3 class="gig-edit-sec-sttl">Your Gig was successfully created and will be published shortly.</h3>
+                    </section>
+
+                    <section data-action-text="Publish Gig" data-action="progress" class="gig-edit-form-section hidden" id="gig-edit-share">
+                        <h2 class="gig-edit-sec-ttl">
+                            It's Alive!
+                        </h2>
+                        <h3 class="gig-edit-sec-sttl">Let's promote your Gig. Our studies show <br> that promoted gigs sell &gt;300% more!</h3>
+
+                        <ul class="gig-edit-share-container">
+                            <li class="js-social social-fb"><a data-gtm-label="facebook" data-gtm-event="social" data-fiverr-event="facebook" data-gtm-action="gig-create-share" class="btn-standard js-gtm-event js-fiverr-event" target="_blank">Share on Facebook</a></li>
+                            <li class="js-social social-tw"><a data-gtm-label="twitter" data-gtm-event="social" data-fiverr-event="twitter" data-gtm-action="gig-create-share" class="btn-standard js-gtm-event js-fiverr-event" target="_blank">Share on Twitter</a></li>
+                            <li class="js-social social-li"><a data-gtm-label="linkedin" data-gtm-event="social" data-fiverr-event="linkedin" data-gtm-action="gig-create-share" class="btn-standard js-gtm-event js-fiverr-event" target="_blank">Post</a></li>
+                            <li class="js-social social-pi"><a data-gtm-label="pinterest" data-gtm-event="social" data-fiverr-event="pinterest" data-gtm-action="gig-create-share" class="btn-standard js-gtm-event js-fiverr-event" target="_blank">Pin it</a></li>
+                        </ul>
+                    </section>
+    <div class="form-buttons js-form-button hidden js-publish">
+        <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+        <div class="sub-action">
+            <a href="#" class="js-back">go back</a>
+            or <a href="#" class="js-finish">skip</a>
+        </div>
+    </div>
+
+    <div class="form-buttons js-form-button hidden js-share">
+        <div class="sub-action">
+            <a href="#" target="_blank" class="js-preview">Preview</a> and <a href="#" class="js-finish">Finish</a>
+        </div>
+    </div>
+
+    <div class="form-buttons js-form-button hidden js-pending">
+        <div class="sub-action">
+            <a href="#" class="js-finish">Finish</a>
+        </div>
+    </div>
+</form>
+
+
+
+
+                                        </div>
+
+                                    </article>
+                                    
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+
+                </div>

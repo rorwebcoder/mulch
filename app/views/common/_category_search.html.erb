@@ -10,7 +10,31 @@
       </div>
       <label class="wrap-search-caption" for="query">SEARCH</label>
    </form>
-   <div class="fake-dropdown fake-dropdown-double" style="visibility: visible;">
+   
+			<div class="fake-dropdown fake-dropdown-double" style="visibility: visible;">
       <a rel="nofollow" data-autowidth="true" data-toggle="dropdown" class="dropdown-toggle" href="#">CATEGORIES</a>
+												<div role="menu" class="dropdown-menu" style="top: -2px;">
+														<div class="dropdown-inner">
+																<span class="arr" style="top: 266px; display:none;"></span>
+																<span class="rightie" style="display:none;"></span>
+																   <ul>
+																			<%categories_home_dropdown_display.each do |c_drop_main|%>
+                                                <li><a data-gtm-label="<%=c_drop_main.name%>" data-gtm-event="Category Navigation" data-gtm-action="global-dropdown-click" class="js-gtm-event" href="/categories/graphics-design"><%=c_drop_main.name%></a>
+																																																</li>
+																				<%end%>
+                                    </ul>
+																																				   <div class="side-menu" style="min-height: 301px; height: 301px; display: none;">
+																																																	<%categories_home_dropdown_display.each do |c_drop_main|%>
+                                                <ul class="">
+                                                    <li><h5><a data-gtm-label="<%=c_drop_main.name%>" data-gtm-event="Category Navigation" data-gtm-action="global-dropdown-click" class="js-gtm-event" href="/categories/graphics-design"><%=c_drop_main.name%></a></h5></li>
+																																																				<%c_drop_main.sub_categories.each do |s_cat|%>
+																																																				  <li><a data-gtm-label="create-cartoon-caricatures" data-gtm-event="<%=s_cat.name%>" data-gtm-action="global-dropdown-click" class="js-gtm-event" href="/categories/graphics-design/create-cartoon-caricatures"><%=s_cat.name%></a></li>
+																																																				<%end%>
+																																																				</ul>
+																																																				<%end%>
+																</div>
+																</div>
+										</div>
    </div>
+			
 </div>
