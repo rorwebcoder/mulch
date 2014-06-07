@@ -1,4 +1,4 @@
-<%= form_for @service, :url => (action == "new") ? admin_services_path : admin_service_path do |f| %>
+<%= form_for @service, :url => (action == "new") ? admin_services_path : admin_service_path, :html => { :multipart => true } do |f| %>
 		
 		<%= render 'admin/errors/error_message', model: @service %>
 		  <p>
@@ -56,5 +56,13 @@
 				<%#= f.check_box :is_published, {}, 1, 0 %>
 		</p>
 		<br />
+		<%= f.fields_for :attachment do |attachment_form| %>
+				<% if attachment_form.object.media %>
+						<%= image_tag attachment_form.object.media.url %>
+				<% end %>
+				<%= attachment_form.file_field :media %>
+  <% end %>
+		<br/>
+		<br/>
   <p><%= f.submit "Submit" %></p>
 <% end %>

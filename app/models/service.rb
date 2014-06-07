@@ -1,5 +1,5 @@
 class Service < ActiveRecord::Base
-  attr_accessible :title, :short_desc, :long_desc, :response_time, :cost, :deliverable_days, :inner_category_id, :user_id, :is_published
+  attr_accessible :title, :short_desc, :long_desc, :response_time, :cost, :deliverable_days, :inner_category_id, :user_id, :is_published, :attachment_attributes
   
   # Associations
   has_one :attachment, as: :attachable
@@ -13,4 +13,6 @@ class Service < ActiveRecord::Base
   validates :deliverable_days, :presence => true
   validates :inner_category_id, :presence => true
   validates :user_id, :presence => true
+  
+  accepts_nested_attributes_for :attachment
 end

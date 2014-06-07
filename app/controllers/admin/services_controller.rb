@@ -9,6 +9,7 @@ class Admin::ServicesController < ApplicationController
 		
 		def new
 				@service = Service.new(:user_id => current_user.id)
+				@service.build_attachment
 				@categories = Category.all
 				@sub_categories = []
 				@inner_categories = []
