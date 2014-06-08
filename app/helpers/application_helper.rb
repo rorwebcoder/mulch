@@ -16,4 +16,9 @@ module ApplicationHelper
 				categories_cnt
 		end
 		
+		def categories_home_dropdown_display
+    @categories =  Category.where('is_public = true')
+  end
+  
+		
 end
