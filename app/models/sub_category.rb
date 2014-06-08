@@ -10,4 +10,14 @@ class SubCategory < ActiveRecord::Base
   validates :description, :presence => true
   validates :category_id, :presence => true
   
+  def get_services_of_sub_category
+      services=[]
+    sub_category=SubCategory.find 2
+    inner_categories = sub_category.inner_categories
+      inner_categories.each do |inner_category|
+        services << inner_category.services
+      end
+    return services.flatten
+  end
+  
 end

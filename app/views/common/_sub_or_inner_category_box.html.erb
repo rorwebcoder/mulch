@@ -1,0 +1,16 @@
+																																
+				<nav class="mp-subcategory-list cf cols-4">
+				<div class="inner" style="display: block;">
+				</div>
+				<ul>
+				<%if !sub_or_inner_categories.blank?%>
+						<%sub_or_inner_categories.each do |sub_or_inner_category|%>
+								<li><span><a href="/<%=sub_or_inner_category.class.to_s == "SubCategory"? "sub_categories/" + "#{sub_or_inner_category.id}"  : "#"%>"><%=sub_or_inner_category.name%></a></span></li>
+						<%end%>
+						<%end%>
+				</ul>
+
+				</nav>
+
+
+

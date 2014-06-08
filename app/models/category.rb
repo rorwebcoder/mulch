@@ -8,4 +8,21 @@ class Category < ActiveRecord::Base
   
   # Associations
   has_many :sub_categories
+  
+  
+    
+    def get_services_of_category
+        inner_categories=[]
+        services=[]
+        sub_categories = self.sub_categories
+        sub_categories.each do |sub_category|
+          inner_categories << sub_category.inner_categories
+        end
+        inner_categories.flatten.each do |inner_category|
+          services << inner_category.services
+        end
+
+        return services.flatten
+    end
+
 end

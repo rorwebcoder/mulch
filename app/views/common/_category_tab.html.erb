@@ -4,7 +4,7 @@
          <ul class="main-cat-list">
 <%categories_home_display.each do |cat_disp| %>
             <li>
-               <a data-gtm-label="graphics-design" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="#"><%=cat_disp.name%></a>
+               <a data-gtm-label="graphics-design" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="<%=category_path(cat_disp)%>"><%=cat_disp.name%></a>
             </li>    
 												
 <%end%>
@@ -15,7 +15,7 @@
                   <ul class="menu-exp">
 																		<%categories_home_more.each do |c_more|%>
                      <li>
-                        <a data-gtm-label="advertising" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="#"><%=c_more.name%></a>
+                        <a data-gtm-label="advertising" data-gtm-event="Category Navigation" data-gtm-action="global-navbar-click" class="js-gtm-event" href="<%=category_path(c_more)%>"><%=c_more.name%></a>
                      </li>
 																				<%end%>
                   </ul>

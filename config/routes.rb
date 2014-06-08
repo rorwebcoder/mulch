@@ -32,6 +32,8 @@ Mulch::Application.routes.draw do
   
   resources :home
   resources :users
+  resources :categories
+  resources :sub_categories
   resources :services  do
       collection do
         get 'start_service'
