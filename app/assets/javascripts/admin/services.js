@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 $(function() {
-  $("#category, #sub_category").on('change', function() {
+  $(".panel_contents #category, .panel_contents #sub_category").on('change', function() {
 				if (this.value == "") {
 						// No action.
 				}

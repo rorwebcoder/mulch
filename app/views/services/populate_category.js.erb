@@ -1,0 +1,19 @@
+var subCategoryObj = $("#sub_category");
+var innerCategoryObj = $("#service_inner_category_id");
+<% if params[:purpose] == "category" %>
+		subCategoryObj.empty(); // remove old options
+		subCategoryObj.append($("<option></option>").attr("value", "").text("Select SubCategory"));
+		<% @sub_categories.each do |sc| %>
+				subCategoryObj.append($("<option></option>").attr("value", <%= sc.id %>).text("<%= sc.name %>"));
+		<% end %>
+		
+		innerCategoryObj.empty();
+		innerCategoryObj.append($("<option></option>").attr("value", "").text("Select Inner Category"));
+<% elsif params[:purpose] == "sub_category" %>
+		innerCategoryObj.empty();
+		innerCategoryObj.append($("<option></option>").attr("value", "").text("Select Inner Category"));
+		
+		<% @inner_categories.each do |ic| %>
+				innerCategoryObj.append($("<option></option>").attr("value", <%= ic.id %>).text("<%= ic.name %>"));
+		<% end %>
+<% end %>

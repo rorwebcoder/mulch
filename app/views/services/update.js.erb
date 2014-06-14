@@ -1,0 +1,11 @@
+$('#step1_form').html("<%= escape_javascript(render :partial => "step1_form") %>")
+
+<% if @save %>
+		selectTab(2);
+		hideAllForm();
+		showForm(2);
+		initializeClickEvents();
+<% else %>
+		initializeChangeEvent();
+<% end %>
+

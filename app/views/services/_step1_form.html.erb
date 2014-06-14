@@ -1,0 +1,145 @@
+<%= form_for @service, :remote => true do |f| %>
+								
+				<section data-action-text="Save &amp; Continue" data-action="submit" class="gig-edit-form-section" id="gig-edit-general">
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_title">Service Title</label>
+                    </div>
+                    <div id="js-gig-title-wrap" class="input-wrap gig-edit-title-wrap">
+																				<%= f.text_area(:title, :cols => 40, :rows => 2, :placeholder => "do something I'm really good at", :class => "gig-title-text", :style => "text-indent: 87px;", :maxlength => "80") %>
+                        <div class="char-count"><em>13</em> / 80 max</div>
+                    <span class="gig-before-title">I will</span></div>
+                    <aside class="gig-tooltip">
+                        <figure>
+                            <figcaption>
+                                <h3>Describe your Gig.</h3>
+                                <p>This is your Gig title. Choose wisely, you can only use 80 characters.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                <div class="form-row ">
+                    <div class="label-wrap padding-top">
+                        <label for="gig_category_id" class="">Category</label>
+                    </div>
+                    <div class="input-wrap gig-edit-category-wrap general-form-field-wrap">																
+																		<%= select_tag "category", options_from_collection_for_select(@categories, "id", "name", params[:category]), :prompt => "Select Category" %>
+																		<%= select_tag "sub_category", options_from_collection_for_select(@sub_categories, "id", "name", params[:sub_category]), :prompt => "Select SubCategory" %>
+																		<%= f.select :inner_category_id, @inner_categories.collect {|ic| [ ic.name, ic.id ] }, :prompt => 'Select InnerCategory' %>
+																</div>
+																
+                    <aside class="gig-tooltip">
+                        <figure class="arr-top">
+                            <figcaption>
+                                <h3>Where will your Gig end up?</h3>
+                                <p>Please choose the category and sub-category most suitable for your Gig.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip7"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_description" class="">Description</label>
+                    </div>
+                    <div id="js-gig-desc-wrap" class="input-wrap gig-edit-desc-input-wrap write-wrap">
+                        <div class="">
+																								<%= f.text_area(:long_desc, :cols => 40, :rows => 4) %>
+																		</div>
+                        <div class="gig-edit-desc-desc">
+                            min. 120 chars
+                        </div>
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure>
+                            <figcaption>
+                                <h3>This is your chance to be creative. Explain your Gig.</h3>
+                                <p>Describe what you are offering. Be as detailed as possible so buyers will be able to understand if this meets their needs. Should be at least 120 characters.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip4"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                <div class="form-row">
+                    <div class="label-wrap">
+                        <label for="gig_tag_list" class="">Tags</label>
+                    </div>
+                    <div class="input-wrap gig-edit-tags-input-wrap">
+                        <div id="js-gig-tags" class="">
+																						<%= f.text_field :tags, :class => "tag-input gig-edit-tags-wrap general-form-field-wrap" %>
+                        </div>
+                        <div class="gig-edit-tags-desc">
+                            min. three tags separated with commas
+                        </div>
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure class="arr-top">
+                            <figcaption>
+                                <h3>Tags, tags, tags!</h3>
+                                <p>These are keywords related to your Gig. These are important because they help classify your Gig.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip5"></div>
+                        </figure>
+                    </aside>
+                </div>
+                
+
+                <div class="form-row ">
+                    <div class="label-wrap padding-top">
+                        <label for="gig_expected_duration" class="">Duration</label>
+                    </div>
+                    <div class="input-wrap">
+                        <span class="expected-duration-wrap general-form-field-wrap">
+                            Maximum
+																						<%= f.select(:deliverable_days, (2..30).collect {|p| [ "#{p} DAYS", p ] }.unshift(["1 DAY", 1]), { :include_blank => true }) %>
+                            To deliver
+                        </span>
+                    </div>
+                    <aside class="gig-tooltip">
+                        <figure class="arr-top">
+                            <figcaption>
+                                <h3>How long will it take you to deliver this Gig?</h3>
+                                <p>Make sure to choose a deadline that you can actually meet. Failing to meet the deadline can cause your order to be cancelled or cause your reputation to drop.</p>
+                            </figcaption>
+                            <div class="gig-tooltip-img gig-tooltip10"></div>
+                        </figure>
+                    </aside>
+                </div>
+
+                    
+                        <div class="form-row">
+                            <div class="label-wrap">
+                                <label for="gig_order_requirement_attributes_body">Instructions <br> for buyer</label>
+                            </div>
+                            <div id="js-gig-reqs-wrap" class="input-wrap">
+																										<%= f.text_area(:buyer_instruction, :cols => 74, :rows => 10, :maxlength => 450 ) %>
+                                <div class="char-count"><em>0</em> / 450 Characters</div>
+                            </div>
+                            <aside class="gig-tooltip">
+                                <figure>
+                                    <figcaption>
+                                        <h3>What do you need in order to start working on this Gig?</h3>
+                                        <p>Tell the buyer what you expect to receive before you can start working on their order.</p>
+                                    </figcaption>
+                                    <div class="gig-tooltip-img gig-tooltip6"></div>
+                                </figure>
+                            </aside>
+                        </div>
+                </section>
+		
+		
+		<div class="form-buttons js-form-button js-general">
+						<input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
+						<div class="sub-action">
+										<%= link_to "Cancel", root_path %>
+						</div>
+		</div>						
+		
+		<%= hidden_field_tag 'step', '1' %>
+
+<%end%>

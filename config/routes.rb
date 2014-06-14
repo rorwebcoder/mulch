@@ -37,6 +37,7 @@ Mulch::Application.routes.draw do
   resources :services  do
       collection do
         get 'start_service'
+        post 'populate_category'
       end
     end
   # Sample resource route with options:

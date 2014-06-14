@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140531015216) do
+ActiveRecord::Schema.define(:version => 20140613190351) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -91,6 +91,9 @@ ActiveRecord::Schema.define(:version => 20140531015216) do
     t.integer  "user_id"
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
+    t.text     "tags"
+    t.text     "buyer_instruction"
+    t.boolean  "is_draft",          :default => true
   end
 
   create_table "sub_categories", :force => true do |t|
