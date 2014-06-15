@@ -1,0 +1,112 @@
+<section class="mp-container mp-container-white container-fluid" itemtype="http://schema.org/Product" itemscope="">
+<div class="row-fluid">
+                        <div class="span12">
+
+                            <div class="mp-gig with-gig-sidebar" style="min-height: 825px;">
+
+
+                                    <header content="http://www.fiverr.com/soapysoapco/make-promotional-mini-lip-balms-with-your-logo" itemprop="url" class="mp-header">
+
+                                        <h1 itemprop="name"><%=@service.title if !@service.title.blank?%></h1>
+
+                                        <aside itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class="gig-cats-social"> 
+
+                                            <div class="gig-social">
+                                                    <div class="coll-toggle">
+                                                        <a data-gtm-event="collections" data-gtm-action="gig-page-clicked-list" data-coll-gig="coll-gig-2639849" href="#" class="icn-heart-toggle js-gtm-event"></a>
+                                                    </div>
+                                                    <div id="coll-gig-2639849" class="coll-heart">
+                                                        <a data-gtm-event="collections" data-gtm-action="gig-page-clicked-heart" href="#" class="icn-heart js-gtm-event">
+                                                            Collect
+                                                        </a>
+                                                    </div>
+                                                <div class="social-icons">
+                                                    <a rel="nofollow" data-gtm-label="click-share-it" data-gtm-event="social" data-gtm-action="gig-share" class="js-open-popup-gig-social js-gtm-event" href="#">Share It, Send It, CopyPaste It</a>
+                                                </div>
+                                            </div>
+																								CREATED <%="#{time_ago_in_words(@service.created_at)} ago "%> <a itemprop="url" href="/categories/advertising"><span itemprop="title"> </span></a>
+
+                                                 <a itemprop="url" href="/categories/advertising/handing-out-flyers"><span itemprop="title"> </span></a>
+
+                                        </aside>
+
+                                    </header>
+
+
+                  <div class="gallery gallery-gig-detail cf " id="gallery-605530">
+
+
+
+   
+			<div style="height: 461px;" class="fader-gallery js-gallery-fader">
+ 
+<div style="height: 459px;" class="slide js-slide selected-slide">
+
+
+								
+        <div style="height: 459px;" class="img-holder js-img-holder gig-item-ll">
+                 <!--   <img src="/assets/sample.png" alt="" data-reload="inprogress" style="width:680px">-->
+																	<img style="width:100%;height:100%" src="<%=@service.attachment.media.url if @service.attachment && @service.attachment.media%>">
+        </div>
+
+</div>
+    </div>
+</div>
+ <input type="hidden" value="2314980" name="last_work_sample">
+                                    <div itemprop="description" class="gig-main-desc">
+                                    <%= !@service.short_desc.blank? ? @service.short_desc : "No Description Provided"%>
+                                    </div>
+   </div>
+                                <aside class="gig-sidebar">
+<div class="gig-order-button order-multi js-order-multi">
+        <a data-bonus-order="false" data-popup="popup-gig-shipping" class="btn-standard-lrg js-gig-price js-open-popup-gig-info js-popup-gig-shipping" href="#">Order Now ($5)</a>
+ </div>
+
+
+
+                                        <div class="gig-rating">
+                                            <span class="rating-lrg rate-10"></span>
+                                        </div>
+
+                                    <div class="gig-stats">
+                                       
+                                            <div class="stats-row stats-row-ratings cf">
+                                                <div class="stat ">4.9<small>Stars</small></div>
+                                                <div class="stat-sml">by</div>
+                                                <div class="stat">67<small>Buyers</small></div>
+                                            </div>
+
+                                            <div class="stats-row stats-row-locked icn-duration cf">
+                                                <div class="stat"><%=@service.response_time.blank? ? "-" : @service.response_time%></div>
+                                                    <div class="stat"><small>days on<br>average</small></div>
+                                            </div>
+
+                                        <div class="stats-row stats-row-locked icn-orders cf">
+                                            <div class="stat">22</div>
+                                            <div class="stat"><small>orders<br>in queue</small></div>
+                                        </div>
+
+
+                                            <div class="stats-row stats-row-sml cf">
+                                                <div class="stat">
+                                                    <small>
+                                                        Avg. Response Time:
+                                                        <em><%=@service.response_time.blank? ? "-" : @service.response_time%> Hrs.</em>
+                                                    </small>
+                                                    <div class="desc-tooltip desc-tooltip-left">
+                                                        <h3>Average Response Time</h3>
+                                                        <p>
+                                                            is the time it usually takes this seller to respond to a request.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    </div>
+
+     </aside>
+
+
+                        </div>
+                    </div>
+																				</section>

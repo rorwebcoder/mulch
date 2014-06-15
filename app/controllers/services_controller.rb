@@ -2,6 +2,9 @@ class ServicesController < ApplicationController
 		before_filter :custom_auth_user
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
+		def show
+		end
+		
 		def index
 		end
 		
