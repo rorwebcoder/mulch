@@ -12,8 +12,7 @@ class SubCategory < ActiveRecord::Base
   
   def get_services_of_sub_category
       services=[]
-    sub_category=SubCategory.find 2
-    inner_categories = sub_category.inner_categories
+    inner_categories = self.inner_categories
       inner_categories.each do |inner_category|
         services << inner_category.services
       end

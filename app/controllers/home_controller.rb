@@ -9,6 +9,6 @@ class HomeController < ApplicationController
 		end
 		
 		def index
-
+						@services = Service.where('is_published = ?', true)
 		end
 end
