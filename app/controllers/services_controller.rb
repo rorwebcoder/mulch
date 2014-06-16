@@ -3,6 +3,9 @@ class ServicesController < ApplicationController
 		before_filter :find_draft_service, :only => [:new]
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
+		def show
+		end
+		
 		def index
 		end
 		
