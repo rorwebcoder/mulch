@@ -1,11 +1,25 @@
-$('#step1_form').html("<%= escape_javascript(render :partial => "step1_form") %>")
-
-<% if @save %>
-		selectTab(2);
-		hideAllForm();
-		showForm(2);
-		initializeClickEvents();
-<% else %>
-		initializeChangeEvent();
+<% if params[:step] == "1" %>
+		$('#step1_form').html("<%= escape_javascript(render :partial => "step1_form") %>")
+		<% if @save %>
+				selectTab(2);
+				hideAllForm();
+				showForm(2);
+				$('#step2_form').html("<%= escape_javascript(render :partial => "step2_form") %>")
+				initializeClickEvents();
+		<% else %>
+				initializeChangeEvent();
+		<% end %>
 <% end %>
 
+<% if params[:step] == "2" %>
+		$('#step2_form').html("<%= escape_javascript(render :partial => "step2_form") %>")
+		<% if @step2_save %>
+				selectTab(3);
+				hideAllForm();
+				showForm(3);
+				$('#step3_form').html("<%= escape_javascript(render :partial => "step3_form") %>")
+				initializeClickEvents();
+		<% else %>
+				
+		<% end %>
+<% end %>

@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
 		before_filter :custom_auth_user
+		before_filter :find_draft_service, :only => [:new]
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
@@ -9,17 +10,18 @@ class ServicesController < ApplicationController
 		end
 		
 		def new
-				@service = Service.new(:user_id => current_user.id)
+				#~ @service = Service.new(:user_id => current_user.id)
 				@categories = Category.all
 				@sub_categories = []
 				@inner_categories = []
-				session[:draft_service_id] = nil
+				form_data_loader if @available_in_session
 		end
 		
 		def create
 				@service = Service.create(params[:service].update({:user_id => current_user.id}))
 				@save = false
 				if @service.save
+						@service.build_attachment
 						session[:draft_service_id] = @service.id
 						flash[:success] = "Service created successfully."
 						@save = true
@@ -47,8 +49,25 @@ class ServicesController < ApplicationController
 		end
 		
 		def update
+				if params[:step] == "1"
+						update_step1_process
+				elsif params[:step] == "2"
+						update_step2_process
+				end
+		end
+		
+		def update_step2_process
+				@step2_save = false
+				if @service.update_attributes(params[:service])
+						@step2_save = true
+				end
+				redirect_to new_service_path(:step => 3)
+		end
+		
+		def update_step1_process
 				@save = false
 				if @service.update_attributes(params[:service])
+						@service.build_attachment
 						session[:draft_service_id] = @service.id
 						flash[:success] = "Service created successfully."
 						@save = true
@@ -82,6 +101,16 @@ class ServicesController < ApplicationController
 		def custom_auth_user
 				return redirect_to root_path if !user_signed_in?
 		end
-
 		
+		def find_draft_service
+				if Service.exists?(session[:draft_service_id])
+						@service = Service.find(session[:draft_service_id])
+						@available_in_session = true
+				else
+						@service = current_user.services.build
+						session[:draft_service_id] = nil
+						@available_in_session = false
+				end
+		end
+
 end

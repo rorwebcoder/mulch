@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   
   # Associations
   has_many :authorizations
+  has_many :services
   has_many :orders
   
   #~ after_create :send_confirmation_mail

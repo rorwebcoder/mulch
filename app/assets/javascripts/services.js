@@ -3,7 +3,19 @@
 
 $(function() {
 		initializeChangeEvent();
+		if (displayStepNumber > 0) {
+				loadStep(displayStepNumber);
+		}
 });
+
+function loadStep(stepNumber) {
+		selectTab(stepNumber);
+		hideAllForm();
+		showForm(stepNumber);
+		
+		// Activate click events
+		initializeClickEvents();
+}
 
 function initializeChangeEvent() {
 		$("#step1_form #category, #step1_form #sub_category").on('change', function() {
