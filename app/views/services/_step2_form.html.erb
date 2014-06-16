@@ -2,7 +2,7 @@
 
 		<section data-action-text="upload video" data-action="progress" class="gig-edit-form-section " id="gig-edit-pre-video">
 				<h2 class="gig-edit-sec-ttl">Awesome!</h2>
-				<h3 class="gig-edit-sec-sttl">Did you know that sellers who present their <br> service on video, sell 220% more?</h3>
+				<h3 class="gig-edit-sec-sttl">Did you know that sellers who present their <br> service on Image, sell 220% more?</h3>
 		</section>
 
 		<section data-action-text="Save &amp; Continue" data-action="progress" class="gig-edit-form-section less-padding " id="gig-edit-upload-video">
@@ -12,12 +12,12 @@
 								<div class="btn-upload-cover">
 										<%= f.fields_for :attachment do |attachment_form| %>
 												<% if attachment_form.object.media %>
-														<%= image_tag attachment_form.object.media.url %>
+														<%= image_tag attachment_form.object.media.url, :height => "50px", :width => "50px" %>
 												<% end %>
 												<%= attachment_form.file_field :media %>
 										<% end %>
 								</div>
-								<small>One video file, 50 MB max.</small>
+								<small>One Image file, 5 MB max.</small>
 						</div>
 				</div>
 
@@ -34,6 +34,7 @@
 		</div>
 		
 		<%= hidden_field_tag 'step', '2' %>
+		<%= hidden_field_tag 'service[id]', @service.id %>
 		
 <% end %>
 

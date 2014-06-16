@@ -21,6 +21,7 @@ class Admin::ServicesController < ApplicationController
 						flash[:success] = "Service created successfully."
 						redirect_to admin_services_path
 				else
+						@service.build_attachment if @service.attachment.nil?
 						@categories = Category.all
 						@category = Category.find(params[:category]) if Category.exists?(params[:category])
 						@sub_categories = @category ? @category.sub_categories : []
@@ -31,6 +32,7 @@ class Admin::ServicesController < ApplicationController
 		end
 		
 		def edit
+				@service.build_attachment if @service.attachment.nil?
 				@category = @service.category.sub_category.category
 				@sub_category = @service.category.sub_category
 				params[:category] = @category.id
@@ -45,6 +47,7 @@ class Admin::ServicesController < ApplicationController
 						flash[:success] = "Service updated successfully."
 						redirect_to admin_services_path
 				else
+						@service.build_attachment if @service.attachment.nil?
 						@categories = Category.all
 						@category = Category.find(params[:category]) if Category.exists?(params[:category])
 						@sub_categories = @category ? @category.sub_categories : []

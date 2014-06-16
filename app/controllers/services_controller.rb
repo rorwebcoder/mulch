@@ -3,13 +3,11 @@ class ServicesController < ApplicationController
 		before_filter :find_draft_service, :only => [:new]
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
-		def show
-		end
-		
 		def index
 		end
 		
 		def start_service
+				session[:draft_service_id] = nil
 		end
 		
 		def new
@@ -24,7 +22,7 @@ class ServicesController < ApplicationController
 				@service = Service.create(params[:service].update({:user_id => current_user.id}))
 				@save = false
 				if @service.save
-						@service.build_attachment
+						@service.build_attachment if @service.attachment.nil?
 						session[:draft_service_id] = @service.id
 						flash[:success] = "Service created successfully."
 						@save = true
@@ -70,7 +68,7 @@ class ServicesController < ApplicationController
 		def update_step1_process
 				@save = false
 				if @service.update_attributes(params[:service])
-						@service.build_attachment
+						@service.build_attachment if @service.attachment.nil?
 						session[:draft_service_id] = @service.id
 						flash[:success] = "Service created successfully."
 						@save = true
