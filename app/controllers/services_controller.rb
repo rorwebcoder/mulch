@@ -54,7 +54,14 @@ class ServicesController < ApplicationController
 						update_step1_process
 				elsif params[:step] == "2"
 						update_step2_process
+				elsif params[:step] == "3"
+						update_step3_process
 				end
+		end
+		
+		def update_step3_process
+				@step3_save = @service.validate_and_assign_cost(params[:service][:cost])
+				@service.save if @step3_save
 		end
 		
 		def update_step2_process

@@ -19,7 +19,16 @@
 				showForm(3);
 				$('#step3_form').html("<%= escape_javascript(render :partial => "step3_form") %>")
 				initializeClickEvents();
-		<% else %>
-				
+		<% end %>
+<% end %>
+
+<% if params[:step] == "3" %>
+		$('#step3_form').html("<%= escape_javascript(render :partial => "step3_form") %>")
+		<% if @step3_save %>
+				selectTab(4);
+				hideAllForm();
+				showForm(4);
+				$('#step4_form').html("<%= escape_javascript(render :partial => "step4_form") %>")
+				initializeClickEvents();
 		<% end %>
 <% end %>

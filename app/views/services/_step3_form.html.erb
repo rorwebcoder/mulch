@@ -1,4 +1,4 @@
-<form method="post" id="gig-create-extras" enctype="multipart/form-data" class="edit-gig create-gig-extras" action="/users/usuganya/manage_gigs" accept-charset="UTF-8"><div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"><input type="hidden" value="ybI7/gbmQBvrzSqZtqDR1+I0La2G0I5Dp0FujcxJFlM=" name="authenticity_token"></div>
+<%= form_for @service, :remote => true do |f| %>
 				<section data-action-text="Save &amp; Continue" data-action="progress" class="gig-edit-form-section " id="gig-edit-shipping">
                         <h2 class="gig-edit-sec-ttl">
                             If you are a maker of real things
@@ -6,19 +6,16 @@
                         <h3 class="gig-edit-sec-sttl">You might like to know that you can <br> charge extra for physical shipping.</h3>
                         <h4 class="gig-edit-shipping-check">
                             <label class="fake-check-green check-text" for="gig_is_shippable">
-                                <input type="hidden" value="0" name="gig[is_shippable]"><input type="checkbox" value="1" name="gig[is_shippable]" id="gig_is_shippable" class="js-shipping-checkbox">
                                 <span class="chk-img"></span>
                                 I ship real stuff and want to charge for it.
                             </label>
                         </h4>
                         <div class="gig-edit-shipping-conf " id="gig-edit-shipping-container" style="">
                             <div class="form-row shipping-input-wrap">
-                                I charge <div data-field-name="gig[local_shipping_price_p]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;"><a data-toggle="dropdown" class="dropdown-toggle" data-min-width="65" href="#" style="width: 65px;">nothing</a><ul role="menu" class="dropdown-menu" style="top: -2px; width: 105px;"><li><a data-field-value="0.0" href="/">nothing</a></li><li><a data-field-value="ZZ" href="/">Unknown Region</a></li></ul></div> and
-																																
-                                <div data-field-name="gig[international_shipping_price_p]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;"><a data-toggle="dropdown" class="dropdown-toggle" data-min-width="65" href="#" style="width: 65px;">nothing</a><ul role="menu" class="dropdown-menu" style="top: -2px; width: 105px;"><li><a data-field-value="0.0" href="/">nothing</a></li><li><a data-field-value="1.0" href="/">$0.80</a></li><li><a data-field-value="2.0" href="/">$1.60</a></li><li><a data-field-value="3.0" href="/">$2.40</a></li><li><a data-field-value="4.0" href="/">$3.20</a></li><li><a data-field-value="5.0" href="/">$4.00</a></li><li><a data-field-value="6.0" href="/">$4.80</a></li><li><a data-field-value="7.0" href="/">$5.60</a></li><li><a data-field-value="8.0" href="/">$6.40</a></li><li><a data-field-value="9.0" href="/">$7.20</a></li><li><a data-field-value="10.0" href="/">$8.00</a></li></ul></div> to anywhere else in the world.
-                                <input type="hidden" value="" name="gig[local_shipping_price_p]">
-                                <input type="hidden" value="" name="gig[local_shipping_country]">
-                                <input type="hidden" value="" name="gig[international_shipping_price_p]">
+                                I charge 
+																										<div data-field-name="gig[local_shipping_price_p]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;">
+																												<%= f.text_field :cost %>
+																										</div> for this product
                             </div>
 
                         </div>
@@ -41,4 +38,5 @@
         </div>
     </div>
 
-</form>
+		<%= hidden_field_tag 'step', '3' %>
+<% end %>

@@ -19,4 +19,14 @@ class Service < ActiveRecord::Base
   validates :tags, :presence => true
   
   accepts_nested_attributes_for :attachment
+
+  def validate_and_assign_cost(param_cost)
+    if param_cost.to_i > 0
+      self.cost = param_cost
+      return true
+    else
+      errors.add(:cost, (param_cost == "") ? "Cost cannot be blank" : "Cost should be greater than Zero." )
+      return false
+    end
+  end
 end
