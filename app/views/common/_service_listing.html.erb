@@ -24,13 +24,10 @@
                         
                     </aside>
                 
-                
-                  
-                
                 <a class="gig-link-main" href="<%=service_path(service)%>">
                     
                     <span class="toprated-badge">Top-Rated Seller!</span>
-                    <span class="gig-pict-214"><img width="214" height="132" src="<%=service.attachment.media.url if(service && service.attachment && service.attachment.media)%>" data-reload="inprogress"></span>
+                    <span class="gig-pict-214"><img width="214" height="132" src="<%=(service && service.attachment && service.attachment.media) ? service.attachment.media.url : "/assets/no-asset.jpg"%>" data-reload="inprogress"></span>
                     
                     <h5 class="ellipsis">
                       <%=service.short_desc%>

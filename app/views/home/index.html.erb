@@ -13,17 +13,11 @@
 <%@services.each do |service|%>
       <div class="js-slide">
             <div class="gig-item">
-                
-                    <aside id="coll-gig-644945" class="coll-heart">
-                        
-                            <a data-gtm-event="collections" data-gtm-action="hp-clicked-heart" data-hint="Collect" href="#" class="icn-heart hint--top js-gtm-event"><span></span></a>
-                            <a data-gtm-event="collections" data-gtm-action="hp-clicked-list" data-coll-gig="coll-gig-644945" data-hint="Add to collections" href="#" class="icn-heart-toggle hint--top js-gtm-event"><span></span></a>
-                        
-                    </aside>
+ 
                 <a class="gig-link-main" href="<%=service_path(service)%>">
                     
                     <span class="toprated-badge">Top-Rated Seller!</span>
-                    <span class="gig-pict-214"><img width="214" height="132" src="<%=service.attachment.media.url if(service && service.attachment && service.attachment.media)%>" data-reload="inprogress"></span>
+                    <span class="gig-pict-214"><img width="214" height="132" src="<%= (service && service.attachment && service.attachment.media) ? service.attachment.media.url : "/assets/no-asset.jpg"%>" data-reload="inprogress"></span>
                     
                     <h5 class="ellipsis">
                       <%=service.short_desc%>

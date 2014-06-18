@@ -29,6 +29,7 @@
 																										<th>Response Time</th>
 																										<th>Deliverable Days</th>
 																										<th>Published</th>
+																										<th>Service Image</th>
 																										<th>Actions</th>
 																									</tr>
 																									<% @services.each do |service| %>
@@ -39,6 +40,7 @@
 																										<td><%= service.response_time %></td>		
 																										<td><%= service.deliverable_days %></td>		
 																										<td><%= service.is_published ? "Published" : "Pending" %></td>
+																										<td><img src="<%=(service.attachment && service.attachment.media) ?  service.attachment.media.url : "/assets/no-asset.jpg"%>" style="width:150px;height:150px"></td>
 																										<td>
 																												<%= link_to "Edit", edit_admin_service_path(service) %> | 
 																												<%= link_to "Delete", admin_service_path(service), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
