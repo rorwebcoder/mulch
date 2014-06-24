@@ -11,20 +11,18 @@
 																				<div>
 																				<%= form_tag('/admin/services', :method => 'get') do -%>
 																		
-																						<p>
+																						<div>
 																								Category<br />
 																								<%= select_tag "category", options_from_collection_for_select(@categories, "id", "name", params[:category]), :prompt => "Select Category" %>
-																						</p>  
-																						<br/>		
-																						<p>
+																						</div>  
+																						<div>
 																								SubCategory<br />
 																								<%= select_tag "sub_category", options_from_collection_for_select(@sub_categories, "id", "name", params[:sub_category]), :prompt => "Select SubCategory" %>
-																						</p>  
-																						<br/>		
-																						<p>
+																						</div>  	
+																						<div>
 																								InnerCategory<br />
 																								<%= select_tag "service_inner_category_id", options_from_collection_for_select(@inner_categories, "id", "name", params[:service_inner_category_id]), :prompt => 'Select InnerCategory' %>
-																						</p>  
+																						</div>  
 																						<div><%= submit_tag 'Filter' %></div>
 																				<% end -%>
 																				</div>

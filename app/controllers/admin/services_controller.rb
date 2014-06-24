@@ -4,23 +4,15 @@ class Admin::ServicesController < ApplicationController
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
-				#~ @services = Service.order("created_at DESC").all
-				#~ @services = [Service.first]
-				
 				@categories = Category.all
 				@category = Category.find(params[:category]) if Category.exists?(params[:category])
 				@sub_categories = @category ? @category.sub_categories : []
 				@sub_category = SubCategory.find(params[:sub_category]) if SubCategory.exists?(params[:sub_category])
 				@inner_categories = @sub_category ? @sub_category.inner_categories : []
-				@inner_category = InnerCategory.find(params[:service_inner_category_id]) if InnerCategory.exists?(params[:service_inner_category_id])
+				@inner_category = InnerCategory.find(params[:service_inner_category_id]) if InnerCategory.exists?(params[:service_inner_category_id])				
 				
-				if @inner_category
-						@services = @inner_category.services
-				elsif @sub_category
-						@services = @sub_category.get_services_of_sub_category
-				elsif @category
-						@services = @category.get_services_of_category
-				end
+				category_object = @inner_category || @sub_category || @category
+				@services = category_object ? category_object.services : Service.order("created_at DESC").all
 		end
 		
 		def new

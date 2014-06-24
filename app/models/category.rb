@@ -8,6 +8,8 @@ class Category < ActiveRecord::Base
   
   # Associations
   has_many :sub_categories
+  has_many :inner_categories, :through => :sub_categories
+  has_many :services, :through => :inner_categories
   
   
 

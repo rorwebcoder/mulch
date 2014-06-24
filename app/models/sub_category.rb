@@ -3,6 +3,7 @@ class SubCategory < ActiveRecord::Base
   
   # Associations
   has_many :inner_categories
+  has_many :services, :through => :inner_categories
   belongs_to :category
   
     # Validations
