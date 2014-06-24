@@ -14,7 +14,10 @@ class SubCategory < ActiveRecord::Base
       services=[]
     inner_categories = self.inner_categories
       inner_categories.each do |inner_category|
-        services << inner_category.services
+        #~ services << inner_category.services
+        inner_category.services.each do |service| 
+          services << service if service.is_published?
+        end
       end
     return services.flatten
   end

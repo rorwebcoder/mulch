@@ -8,18 +8,6 @@
 														<h3>Service List<span style="float:right"><%= link_to "Add Service", new_admin_service_path %></span></h3>
                   <div class="panel_contents">
                     <div>
-																				<% if @services.blank? %>
-																						<table style="width:100%" class="reference">
-																									<tbody>
-																											<tr>
-																											<td>No service added yet.</td>
-																											</tr>
-																											<tr>
-																											<td><%= link_to "Add Service", new_admin_service_path %></td>
-																											</tr>
-																										</tbody>
-																						</table>
-																				<% else %>
 																				<div>
 																				<%= form_tag('/admin/services', :method => 'get') do -%>
 																		
@@ -35,11 +23,23 @@
 																						<br/>		
 																						<p>
 																								InnerCategory<br />
-																								<%= select_tag "service_inner_category_id", options_from_collection_for_select(@inner_categories, "id", "name", params[:inner_category]), :prompt => 'Select InnerCategory' %>
+																								<%= select_tag "service_inner_category_id", options_from_collection_for_select(@inner_categories, "id", "name", params[:service_inner_category_id]), :prompt => 'Select InnerCategory' %>
 																						</p>  
 																						<div><%= submit_tag 'Filter' %></div>
 																				<% end -%>
 																				</div>
+																				<% if @services.blank? %>
+																						<table style="width:100%" class="reference">
+																									<tbody>
+																											<tr>
+																											<td>No service added yet.</td>
+																											</tr>
+																											<tr>
+																											<td><%= link_to "Add Service", new_admin_service_path %></td>
+																											</tr>
+																										</tbody>
+																						</table>
+																				<% else %>
 																				<table style="width:100%" class="reference">
 																									<tbody>
 																									<tr>
@@ -50,6 +50,7 @@
 																										<th>Deliverable Days</th>
 																										<th>Published</th>
 																										<th>Service Image</th>
+																										<th>Category</th>
 																										<th>Actions</th>
 																									</tr>
 																									<% @services.each do |service| %>
@@ -61,6 +62,11 @@
 																										<td><%= service.deliverable_days %></td>		
 																										<td><%= service.is_published ? "Published" : "Pending" %></td>
 																										<td><img src="<%=(service.attachment && service.attachment.media) ?  service.attachment.media.url : "/assets/no-asset.jpg"%>" style="width:150px;height:150px"></td>
+																										<td>
+																												<%= @category && @category.name %> | 
+																												<%= @sub_category && @sub_category.name %> | 
+																												<%= @inner_category && @inner_category.name %>
+																										</td>
 																										<td>
 																												<%= link_to "Edit", edit_admin_service_path(service) %> | 
 																												<%= link_to "Delete", admin_service_path(service), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
