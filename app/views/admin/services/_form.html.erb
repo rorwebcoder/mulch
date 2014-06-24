@@ -62,8 +62,8 @@
   </p>
 		<br/>
 		<p>
-				<%#= f.label "Published ?" %>
-				<%#= f.check_box :is_published, {}, 1, 0 %>
+				<%= f.label "Published" %>
+				<%= f.check_box :is_published, {}, 1, 0 %>
 		</p>
 		<br />
 		<%= f.fields_for :attachment do |attachment_form| %>
