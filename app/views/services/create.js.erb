@@ -4,6 +4,7 @@ $('#step1_form').html("<%= escape_javascript(render :partial => "step1_form") %>
 		selectTab(2);
 		hideAllForm();
 		showForm(2);
+		$('#step2_form').html("<%= escape_javascript(render :partial => "step2_form") %>")
 		initializeClickEvents();
 <% else %>
 		initializeChangeEvent();
