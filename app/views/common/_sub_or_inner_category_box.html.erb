@@ -5,7 +5,7 @@
 				<ul>
 				<%if !sub_or_inner_categories.blank?%>
 						<%sub_or_inner_categories.each do |sub_or_inner_category|%>
-								<li><span><a href="/<%=sub_or_inner_category.class.to_s == "SubCategory"? "sub_categories/" + "#{sub_or_inner_category.id}"  : "#"%>"><%=sub_or_inner_category.name%></a></span></li>
+								<li><span><a href="<%=sub_or_inner_category.class.to_s == "SubCategory"? "/sub_categories/" + "#{sub_or_inner_category.id}"  : "javascript:void(0)"%>"><%=sub_or_inner_category.name%></a></span></li>
 						<%end%>
 						<%end%>
 				</ul>
