@@ -12,7 +12,7 @@ class ServicesController < ApplicationController
 		
 		def new
 				#~ @service = Service.new(:user_id => current_user.id)
-				@categories = Category.all
+				@categories = Category.public_accessible
 				@sub_categories = []
 				@inner_categories = []
 				form_data_loader if @available_in_session
@@ -35,7 +35,7 @@ class ServicesController < ApplicationController
 						@save = true
 						form_data_loader
 				else
-						@categories = Category.all
+						@categories = Category.public_accessible
 						@category = Category.find(params[:category]) if Category.exists?(params[:category])
 						@sub_categories = @category ? @category.sub_categories : []
 						@sub_category = SubCategory.find(params[:sub_category]) if SubCategory.exists?(params[:sub_category])
@@ -89,7 +89,7 @@ class ServicesController < ApplicationController
 						@save = true
 						form_data_loader
 				else
-						@categories = Category.all
+						@categories = Category.public_accessible
 						@category = Category.find(params[:category]) if Category.exists?(params[:category])
 						@sub_categories = @category ? @category.sub_categories : []
 						@sub_category = SubCategory.find(params[:sub_category]) if SubCategory.exists?(params[:sub_category])

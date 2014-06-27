@@ -11,6 +11,9 @@ class Category < ActiveRecord::Base
   has_many :inner_categories, :through => :sub_categories
   has_many :services, :through => :inner_categories
   
+  # Named scopes
+  scope :public_accessible, where(:is_public => true)
+
   
 
     def get_services_of_category

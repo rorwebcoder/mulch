@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
 		def show
 				@category = Category.find(params[:id])
 				@sub_categories = @category.sub_categories
-				@categor_services = @category.get_services_of_category
+				@categor_services = @category.services
 		end
 		
 		
