@@ -1,35 +1,17 @@
-<%= form_for @service, :remote => true do |f| %>
-				<section data-action-text="Save &amp; Continue" data-action="progress" class="gig-edit-form-section " id="gig-edit-shipping">
-                        <h2 class="gig-edit-sec-ttl">
-                            If you are a maker of real things
-                        </h2>
-                        <h3 class="gig-edit-sec-sttl">You might like to know that you can <br> charge extra for physical shipping.</h3>
-                        <h4 class="gig-edit-shipping-check">
-                            <label class="fake-check-green check-text" for="gig_is_shippable">
-                                <span class="chk-img"></span>
-                                I ship real stuff and want to charge for it.
-                            </label>
-                        </h4>
-                        <div class="gig-edit-shipping-conf " id="gig-edit-shipping-container" style="">
-                            <div class="form-row shipping-input-wrap">
-                                I charge 
-																										<div data-field-name="gig[local_shipping_price_p]" class="fake-dropdown fake-dropdown-real gig-shipping-dropdown" style="visibility: visible;">
-																												<%= f.text_field :cost %>
-																										</div> for this product
-                            </div>
-
-                        </div>
-                        <aside class="gig-tooltip">
-                            <figure>
-                                <figcaption>
-                                    <h3>Do you ship?</h3>
-                                    <p>If you do, this is the place to define how much you charge for it, locally and internationally. It's optional.</p>
-                                </figcaption>
-                                <div class="gig-tooltip-img gig-tooltip9"></div>
-                            </figure>
-                        </aside>
-                    </section>
-
+<%= nested_form_for @service, :remote => true do |f| %>
+		<%= f.fields_for :extra_charges do |ec_form| %>
+				<div class="extra_charge_fields">
+						<%= ec_form.label :description %>
+						<%= ec_form.text_field :description %>
+						<%= ec_form.label :cost %>
+						<%= ec_form.text_field :cost %>
+						<%= ec_form.link_to_remove "Remove" %>
+				</div>
+				<br />
+		<% end %>
+		
+		<p><%= f.link_to_add "Add Charge", :extra_charges %></p>
+		
     <div class="form-buttons js-form-button  js-extras">
         <input type="submit" value="Save &amp; Continue" class="btn-standard-lrg btn-green">
         <div class="sub-action">

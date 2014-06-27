@@ -1,8 +1,13 @@
 class Service < ActiveRecord::Base
   attr_accessible :title, :short_desc, :long_desc, :response_time, :cost, :deliverable_days, :inner_category_id, :user_id, :is_published, :attachment_attributes,
-                        :buyer_instruction, :tags
+                        :buyer_instruction, :tags, :extra_charges_attributes
+  
+  # Callbacks
+  before_create :set_default_cost
+  before_save :set_default_cost
   
   # Associations
+  has_many :extra_charges
   has_one :attachment, as: :attachable
   belongs_to :category, :class_name => "InnerCategory", :foreign_key => "inner_category_id"
   belongs_to :user
@@ -19,6 +24,7 @@ class Service < ActiveRecord::Base
   validates :tags, :presence => true
   
   accepts_nested_attributes_for :attachment
+  accepts_nested_attributes_for :extra_charges, :allow_destroy => true
 
   def validate_and_assign_cost(param_cost)
     if param_cost.to_i > 0
@@ -28,5 +34,10 @@ class Service < ActiveRecord::Base
       errors.add(:cost, (param_cost == "") ? "Cost cannot be blank" : "Cost should be greater than Zero." )
       return false
     end
+  end
+  
+  private
+  def set_default_cost
+    self.cost = 5
   end
 end

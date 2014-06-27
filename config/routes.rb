@@ -35,11 +35,12 @@ Mulch::Application.routes.draw do
   resources :categories
   resources :sub_categories
   resources :services  do
-      collection do
-        get 'start_service'
-        post 'populate_category'
-      end
+    collection do
+      get 'start_service'
+      get 'finish'
+      post 'populate_category'
     end
+  end
   # Sample resource route with options:
   #   resources :products do
   #     member do

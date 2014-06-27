@@ -1,6 +1,6 @@
 class ServicesController < ApplicationController
 		before_filter :custom_auth_user
-		before_filter :find_draft_service, :only => [:new]
+		before_filter :find_draft_service, :only => [:new, :finish]
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
@@ -16,6 +16,13 @@ class ServicesController < ApplicationController
 				@sub_categories = []
 				@inner_categories = []
 				form_data_loader if @available_in_session
+				build_extra_charges if params[:step] == "3"
+		end
+		
+		def build_extra_charges
+				if @service.extra_charges.length < 1
+						@service.extra_charges.build
+				end
 		end
 		
 		def create
@@ -60,8 +67,9 @@ class ServicesController < ApplicationController
 		end
 		
 		def update_step3_process
-				@step3_save = @service.validate_and_assign_cost(params[:service][:cost])
-				@service.save if @step3_save
+				#~ @step3_save = @service.validate_and_assign_cost(params[:service][:cost])
+				#~ @service.save if @step3_save
+				@step3_save = @service.update_attributes(params[:service])
 		end
 		
 		def update_step2_process
@@ -98,6 +106,14 @@ class ServicesController < ApplicationController
 						sub_category = SubCategory.find(params[:category_id])
 						@inner_categories = sub_category.inner_categories
 				end
+		end
+		
+		def finish
+				if @service
+						@service.update_attribute(:is_draft, false)
+						session[:draft_service_id] = nil
+				end
+				redirect_to root_path
 		end
 		
 				private		

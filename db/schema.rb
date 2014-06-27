@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140613190351) do
+ActiveRecord::Schema.define(:version => 20140625152436) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20140613190351) do
     t.boolean  "is_public",   :default => false
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
+  end
+
+  create_table "extra_charges", :force => true do |t|
+    t.string   "description"
+    t.float    "cost"
+    t.integer  "service_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "inner_categories", :force => true do |t|

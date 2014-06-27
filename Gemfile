@@ -61,3 +61,6 @@ gem 'simple_form'
 
 # Paperclip for media upload
 gem "paperclip", "3.3.0"
+
+# To handle nested forms with more configurable options
+gem "nested_form"
