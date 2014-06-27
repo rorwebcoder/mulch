@@ -1,0 +1,73 @@
+<div class="gig-main-extras with-multiples">
+
+                                        <h4>
+                                            Check out my Gig Extras
+                                                <span class="quantity-select">
+                                                    Gig Quantity: 
+																																																				<select name="qt_clone2" class="additional_services">
+																																																						<%(1..10).each do |s|%>
+																																																				<option value="<%=s * 5%>"><%=s%></option>
+																																																				<%end%>
+																																														</select>
+                                                </span>
+                                        </h4>
+
+                                        <table>
+                                            <tbody>
+
+<%extra_charges.each do |extra_charge|%>
+                                                <tr class="js-extra-row">
+                                                    
+                                                    <td class="chkbox">
+                                                        <input type="checkbox" value="" name="gig_items_check" class="extras_checkbox" id="pickextra_<%=extra_charge.id%>" data-multi="true" data-cost="5.0" class="gig_item-577133">
+                                                    </td>
+                                                    <td>
+                                                        <%=extra_charge.description.blank? ? "No Description" : extra_charge.description%>
+                                                    </td>
+                                                    <td class="date">
+                                                        &nbsp;
+                                                    </td>
+                                                    <td class="amount with-multi">
+																																																				
+                                                            <strong></strong>
+																																																												<%if !extra_charge.cost.blank?%>
+																																																												<select data-multi="true" name="gig_items" class="extras_dropdown" id="cost_<%=extra_charge.id%>">
+																																																												<%(1..10).each do |a|%>
+																																																												<option value="<%=a * extra_charge.cost.to_i%>"><%=a%> ($<%=a * extra_charge.cost.to_i%>)</option>
+																																																												<%end%>
+																																																												</select>
+																																																												<%end%>
+                                                    </td>
+                                                </tr>
+
+<%end%>                             
+																													</tbody>
+                                        </table>
+
+                                        <div class="extras-button">
+<div class="gig-order-button">
+        <input type="submit" data-bonus-order="false" data-gtm-action="extra_order" data-gtm-event="order" id="qt-449393" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event order_extra_button" value="Order Now ($5)">
+</div>
+                                                <small>*including $5 gig, Extras</small>
+                                        </div>
+                                    </div>
+																																				
+																																				
+<script>
+$( ".additional_services,.extras_dropdown,.extras_checkbox" ).change(function() {
+								var additional_service = $(".additional_services").val()
+								extra_v = []
+								$.each($(".extras_checkbox:checked"), function( index, value ) {
+												cid =  $(value).attr("id") .split("_")[1]
+												extra_v.push($("#cost_"+cid).val())
+								});
+
+								var total = 0;
+								for (var i = 0; i < extra_v.length; i++) {
+												total += extra_v[i] << 0;
+								}
+								total += parseInt(additional_service)
+								$(".order_extra_button").val("Order Now ($"+total+")")
+								$(".order_extra_anchor").text("Order Now ($"+total+")")
+});
+</script>

@@ -56,10 +56,13 @@
                                     <div itemprop="description" class="gig-main-desc">
                                     <%= !@service.short_desc.blank? ? @service.short_desc : "No Description Provided"%>
                                     </div>
+																																				<%if !@service.extra_charges.blank?%>
+																																				<%= render :partial => "/services/order_extras" , :locals => {:extra_charges => @service.extra_charges} %>
+																																				<%end%>
    </div>
                                 <aside class="gig-sidebar">
 <div class="gig-order-button order-multi js-order-multi">
-        <a data-bonus-order="false" data-popup="popup-gig-shipping" class="btn-standard-lrg js-gig-price js-open-popup-gig-info js-popup-gig-shipping" href="#">Order Now ($5)</a>
+        <a data-bonus-order="false" data-popup="popup-gig-shipping" class="btn-standard-lrg js-gig-price js-open-popup-gig-info js-popup-gig-shipping order_extra_anchor" href="#">Order Now ($5)</a>
  </div>
 
                                         <div class="gig-rating">
