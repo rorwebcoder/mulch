@@ -25,6 +25,7 @@ Mulch::Application.routes.draw do
     resources :services do
       collection do
         post 'populate_category'
+        post 'update_published_status' 
       end
     end
   end

@@ -2,6 +2,9 @@
 // All this logic will automatically be available in application.js.
 
 $(function() {
+  // Published dropdown event
+		initiateSelectEvent();
+		
   $(".panel_contents #category, .panel_contents #sub_category").on('change', function() {
 				if (this.value == "") {
 						// No action.
@@ -18,3 +21,18 @@ $(function() {
 				}
 		});
 });
+
+
+function initiateSelectEvent() {
+		$("#published_value").on('change', function() {
+				// Trigger ajax to update published status
+				$.ajax({
+						type: "POST",
+						url: publishedStatusUpdUrl,
+						data: { service_id: this.value, purpose: $("#published_value :selected").text() }
+				}).done(function( msg ) {
+						// Success
+				});
+		});
+}
+

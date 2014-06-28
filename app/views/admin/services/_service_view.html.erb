@@ -1,0 +1,19 @@
+		<td><%= service.title %></td>
+		<td><%= service.user.name.blank? ? service.user.email : service.user.name %></td>
+		<td><%= service.short_desc %></td>		
+		<td><%= service.response_time %></td>		
+		<td><%= service.deliverable_days %></td>		
+		<td>
+				<%= service.is_published ? "Published" : "Pending" %>
+				<%= select_tag "published_value", published_options(service) %>
+		</td>
+		<td><img src="<%=(service.attachment && service.attachment.media) ?  service.attachment.media.url : "/assets/no-asset.jpg"%>" style="width:150px;height:150px"></td>
+		<td>
+				<%= @category && @category.name %> | 
+				<%= @sub_category && @sub_category.name %> | 
+				<%= @inner_category && @inner_category.name %>
+		</td>
+		<td>
+				<%= link_to "Edit", edit_admin_service_path(service) %> | 
+				<%= link_to "Delete", admin_service_path(service), :confirm => "Are you sure want to delete?", :method => "DELETE" %>
+		</td>

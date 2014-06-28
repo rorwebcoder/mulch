@@ -85,6 +85,15 @@ class Admin::ServicesController < ApplicationController
 				end
 		end
 		
+		def update_published_status
+				if Service.exists?(params[:service_id])
+						@service = Service.find(params[:service_id])
+						@service.update_attribute(:is_published, params[:purpose] == "Published")
+				else
+						@service = nil
+				end
+		end
+		
 		private		
 		def valid_record
 				return redirect_to admin_services_path if !Service.exists?(params[:id])
