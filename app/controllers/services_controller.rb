@@ -123,7 +123,7 @@ class ServicesController < ApplicationController
 		end
 		
 		def custom_auth_user
-				return redirect_to root_path if !user_signed_in?
+				return redirect_to new_user_session_path if !user_signed_in?
 		end
 		
 		def find_draft_service
