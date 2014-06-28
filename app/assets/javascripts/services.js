@@ -2,8 +2,11 @@
 // All this logic will automatically be available in application.js.
 
 $(function() {
+		if (typeof(serviceShowPage) != "undefined") {
+				serviceShowJs();
+		}
 		initializeChangeEvent();
-		if (displayStepNumber > 0) {
+		if (typeof(displayStepNumber) != "undefined" && (displayStepNumber > 0)) {
 				loadStep(displayStepNumber);
 		}
 });
@@ -95,4 +98,25 @@ function skipStep(stepNumber) {
 		selectTab(stepNumber + 1);
 		// Show next form
 		showForm(stepNumber + 1);
+}
+
+
+// Javascript for service show page
+function serviceShowJs() {
+		$( ".additional_services,.extras_dropdown,.extras_checkbox" ).change(function() {
+				var additional_service = $(".additional_services").val()
+				extra_v = []
+				$.each($(".extras_checkbox:checked"), function( index, value ) {
+						cid =  $(value).attr("id") .split("_")[1]
+						extra_v.push($("#cost_"+cid).val())
+				});
+
+				var total = 0;
+				for (var i = 0; i < extra_v.length; i++) {
+						total += extra_v[i] << 0;
+				}
+				total += parseInt(additional_service)
+				$(".order_extra_button").val("Order Now ($"+total+")")
+				$(".order_extra_anchor").text("Order Now ($"+total+")")
+		});
 }
