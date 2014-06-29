@@ -103,6 +103,10 @@ class Admin::ServicesController < ApplicationController
 		end
 		
 		def custom_auth_user
-				return redirect_to root_path if !user_signed_in?
+				if !user_signed_in?
+						redirect_to new_user_session_path
+				elsif current_user.role != "admin"
+						redirect_to home_index_path
+				end
 		end
 end

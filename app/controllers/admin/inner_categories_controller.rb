@@ -1,5 +1,6 @@
 class Admin::InnerCategoriesController < ApplicationController
 			layout 'admin_layout'
+		before_filter :custom_auth_user
 				before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
@@ -45,6 +46,14 @@ class Admin::InnerCategoriesController < ApplicationController
 		def valid_record
 				return redirect_to admin_inner_categories_path if !InnerCategory.exists?(params[:id])
 				@inner_category = InnerCategory.find(params[:id])
+		end
+		
+		def custom_auth_user
+				if !user_signed_in?
+						redirect_to new_user_session_path
+				elsif current_user.role != "admin"
+						redirect_to home_index_path
+				end
 		end
 end
 
