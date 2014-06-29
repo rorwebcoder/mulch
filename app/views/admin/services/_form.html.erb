@@ -1,4 +1,4 @@
-<%= form_for @service, :url => (action == "new") ? admin_services_path : admin_service_path, :html => { :multipart => true } do |f| %>
+<%= nested_form_for @service, :url => (action == "new") ? admin_services_path : admin_service_path, :html => { :multipart => true } do |f| %>
 		
 		<%= render 'admin/errors/error_message', model: @service %>
 		  <p>
@@ -73,6 +73,18 @@
 				<%= attachment_form.file_field :media %>
   <% end %>
 		<br/>
+		
+		<%= f.fields_for :extra_charges do |ec_form| %>
+				<div class="extra_charge_fields">
+						<%= ec_form.label :description %>
+						<%= ec_form.text_field :description %>
+						<%= ec_form.label :cost %>
+						<%= ec_form.text_field :cost %>
+						<%= ec_form.link_to_remove "Remove" %>
+				</div>
+				<br />
+		<% end %>
+		<p><%= f.link_to_add "Add Charge", :extra_charges %></p>
 		<br/>
   <p><%= f.submit "Submit" %></p>
 <% end %>

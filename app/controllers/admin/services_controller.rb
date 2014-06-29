@@ -18,6 +18,7 @@ class Admin::ServicesController < ApplicationController
 		def new
 				@service = Service.new(:user_id => current_user.id)
 				@service.build_attachment
+				@service.extra_charges.build
 				@categories = Category.all
 				@sub_categories = []
 				@inner_categories = []
@@ -30,6 +31,7 @@ class Admin::ServicesController < ApplicationController
 						redirect_to admin_services_path
 				else
 						@service.build_attachment if @service.attachment.nil?
+						@service.extra_charges.build if @service.extra_charges.blank?
 						@categories = Category.all
 						@category = Category.find(params[:category]) if Category.exists?(params[:category])
 						@sub_categories = @category ? @category.sub_categories : []

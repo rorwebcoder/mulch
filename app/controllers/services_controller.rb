@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-		before_filter :custom_auth_user
+		before_filter :custom_auth_user, :except => [:show]
 		before_filter :find_draft_service, :only => [:new, :finish]
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
@@ -8,6 +8,9 @@ class ServicesController < ApplicationController
 		
 		def start_service
 				session[:draft_service_id] = nil
+		end
+		
+		def show
 		end
 		
 		def new
