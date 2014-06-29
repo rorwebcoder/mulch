@@ -1,6 +1,9 @@
 class InnerCategory < ActiveRecord::Base
   attr_accessible :name, :description, :sub_category_id
   
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   # Associations
   has_many :services
   belongs_to :sub_category

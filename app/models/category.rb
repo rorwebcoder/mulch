@@ -1,6 +1,9 @@
 class Category < ActiveRecord::Base
   attr_accessible :name, :description, :is_public, :is_published
   
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   # Validations
   validates :name, :presence => true, :uniqueness => true
   validates :description, :presence => true

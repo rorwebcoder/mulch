@@ -64,3 +64,6 @@ gem "paperclip", "3.3.0"
 
 # To handle nested forms with more configurable options
 gem "nested_form"
+
+# Friendly url with finder
+gem "friendly_id", "~> 4.0.10"

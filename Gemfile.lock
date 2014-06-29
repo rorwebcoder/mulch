@@ -54,6 +54,8 @@ GEM
     execjs (2.0.2)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    friendly_id (4.0.10.1)
+      activerecord (>= 3.0, < 4.0)
     hashie (2.1.1)
     hike (1.2.3)
     http (0.6.1)
@@ -198,6 +200,7 @@ PLATFORMS
 DEPENDENCIES
   carrierwave
   devise
+  friendly_id (~> 4.0.10)
   jquery-rails
   json
   koala

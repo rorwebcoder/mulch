@@ -9,7 +9,7 @@ class InnerCategoriesController < ApplicationController
 
 		private		
 		def valid_record
-				return redirect_to home_path if !InnerCategory.exists?(params[:id])
+				return redirect_to home_index_path if !InnerCategory.exists?(params[:id])
 				@inner_category = InnerCategory.find(params[:id])
 		end
 		

@@ -11,7 +11,7 @@ class SubCategoriesController < ApplicationController
 		
 			private		
 		def valid_record
-				return redirect_to admin_categories_path if !Category.exists?(params[:id])
+				return redirect_to home_index_path if !SubCategory.exists?(params[:id])
 				@sub_category = SubCategory.find(params[:id])
 		end
 		
