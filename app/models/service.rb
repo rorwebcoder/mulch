@@ -1,6 +1,6 @@
 class Service < ActiveRecord::Base
   attr_accessible :title, :short_desc, :long_desc, :response_time, :cost, :deliverable_days, :inner_category_id, :user_id, :is_published, :attachment_attributes,
-                        :buyer_instruction, :tags, :extra_charges_attributes
+                        :buyer_instruction, :tags, :extra_charges_attributes, :is_draft
   
   # Callbacks
   before_create :set_default_cost

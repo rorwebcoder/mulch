@@ -25,7 +25,7 @@ class Admin::ServicesController < ApplicationController
 		end
 		
 		def create
-				@service = Service.create(params[:service].update({:user_id => current_user.id}))
+				@service = Service.create(params[:service].update({:user_id => current_user.id, :is_draft => false}))
 				if @service.save
 						flash[:success] = "Service created successfully."
 						redirect_to admin_services_path
@@ -53,7 +53,7 @@ class Admin::ServicesController < ApplicationController
 		end
 		
 		def update
-				if @service.update_attributes(params[:service].update({:user_id => current_user.id}))
+				if @service.update_attributes(params[:service].update({:user_id => current_user.id, :is_draft => false}))
 						flash[:success] = "Service updated successfully."
 						redirect_to admin_services_path
 				else
