@@ -2,22 +2,20 @@ module ApplicationHelper
 
 
 		def categories_home_display
-				categories_display = Category.where('is_public = true').limit(7)
-				categories_display
+				Category.public_accessible.limit(7)
 		end
 		
 		def categories_home_more
-				categories_more = Category.where('is_public = true')
+				categories_more = Category.public_accessible
 				categories_more = categories_more - categories_home_display
 		end
 		
 		def categories_count
-				categories_cnt = Category.where('is_public = true').count
-				categories_cnt
+				Category.public_accessible.count
 		end
 		
 		def categories_home_dropdown_display
-    @categories =  Category.where('is_public = true')
+    @categories =  Category.public_accessible
   end
   
 		

@@ -9,8 +9,12 @@ class Service < ActiveRecord::Base
   # Associations
   has_many :extra_charges
   has_one :attachment, as: :attachable
+  #~ belongs_to :inner_category
   belongs_to :category, :class_name => "InnerCategory", :foreign_key => "inner_category_id"
   belongs_to :user
+  
+  #~ delegate :sub_category, :to => :inner_category
+  #~ delegate :category, :to => :sub_category
   
   validates :title, :presence => true
   #~ validates :short_desc, :presence => true

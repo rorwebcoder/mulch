@@ -12,8 +12,7 @@ class Category < ActiveRecord::Base
   has_many :services, :through => :inner_categories
   
   # Named scopes
-  scope :public_accessible, where(:is_public => true)
-
+  scope :public_accessible, where(["is_public = ? and is_published = ?", true, true])
   
 
     def get_services_of_category
