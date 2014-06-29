@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :description, :is_public
+  attr_accessible :name, :description, :is_public, :is_published
   
   # Validations
   validates :name, :presence => true, :uniqueness => true

@@ -18,6 +18,12 @@
 				<%= f.check_box :is_public, {}, 1, 0 %>
 		</p>
 		<br />
+		
+		<p>
+				Published: <%= f.radio_button :is_published, "true" %>
+				Pending: <%= f.radio_button :is_published, "false" %>
+		</p>
+		<br />
 
   <p><%= f.submit "Submit" %></p>
 <% end %>

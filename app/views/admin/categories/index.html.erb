@@ -5,7 +5,7 @@
 <div class="columns">
               <div class="column" style="width: 100.0%;">
                 <div class="panel">
-                  <h3>Category List</h3>
+														<h3>Category List<span style="float:right"><%= link_to "Add Category", new_admin_category_path %></span></h3>
                   <div class="panel_contents">
                     <div>
 																				<% if @categories.blank? %>
@@ -15,7 +15,6 @@
 																											<td>No category added yet.</td>
 																											</tr>
 																											<tr>
-																											<td><%= link_to "Add Category", new_admin_category_path %></td>
 																											</tr>
 																										</tbody>
 																						</table>
@@ -25,6 +24,7 @@
 																									<tr>
 																										<th>Name</th>
 																										<th>Description</th>		
+																										<th>Status</th>
 																										<th>Type</th>
 																										<th>Actions</th>
 																									</tr>
@@ -32,6 +32,7 @@
 																									<tr>
 																										<td><%= category.name %></td>
 																										<td><%= category.description %></td>		
+																										<td><%= category.is_published ? "Published" : "Pending" %></td>
 																										<td><%= category.is_public ? "Public" : "Private" %></td>
 																										<td>
 																												<%= link_to "Edit", edit_admin_category_path(category) %> | 
