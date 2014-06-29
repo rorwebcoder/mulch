@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 		
 			private		
 		def valid_record
-				return redirect_to admin_categories_path if !Category.exists?(params[:id])
+				return redirect_to home_path if !Category.exists?(params[:id])
 				@category = Category.find(params[:id])
 		end
 		

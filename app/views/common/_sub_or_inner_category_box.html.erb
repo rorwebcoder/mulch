@@ -3,10 +3,11 @@
 				<div class="inner" style="display: block;">
 				</div>
 				<ul>
-				<%if !sub_or_inner_categories.blank?%>
-						<%sub_or_inner_categories.each do |sub_or_inner_category|%>
-								<li><span><a href="<%=sub_or_inner_category.class.to_s == "SubCategory"? "/sub_categories/" + "#{sub_or_inner_category.id}"  : "javascript:void(0)"%>"><%=sub_or_inner_category.name%></a></span></li>
-						<%end%>
+						<% defined?(sub_categories) && sub_categories.each do |sub_category|%>
+								<li><span><a href="<%= sub_category_path(sub_category) %>"><%= sub_category.name %></a></span></li>
+						<% end %>
+						<% defined?(inner_categories) && inner_categories.each do |inner_category|%>
+								<li><span><a href="<%= inner_category_path(inner_category) %>"><%= inner_category.name %></a></span></li>
 						<%end%>
 				</ul>
 

@@ -4,9 +4,6 @@
 
                             <div class="mp-box">
                                 <div class="box-row p-b-0">
-
-																				<%= render :partial => "/common/sub_or_inner_category_box" , :locals => {:inner_categories => @inner_categories}  %>
-
 																																			
 																																<!--			<nav class="mp-gig-filter cf" style="padding-right: 88px;">
                                         <div class="layout-toggle js-layout-toggle sel-auto" style="display: block;">
@@ -27,6 +24,6 @@
 -->
 </div>
                             </div>
-		<%= render :partial => "/common/service_listing"  , :locals => {:services => @sub_category_services} %>
+																						<%= render :partial => "/common/service_listing"  , :locals => {:services => @services} %>
 																		</div>
                     </section>

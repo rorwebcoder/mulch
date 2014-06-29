@@ -5,7 +5,7 @@ class SubCategoriesController < ApplicationController
 		def show
 				@sub_category = SubCategory.find(params[:id])
 				@inner_categories = @sub_category.inner_categories
-				@sub_category_services = @sub_category.get_services_of_sub_category
+				@sub_category_services = @sub_category.services.where("services.is_published = true")
 		end
 		
 		

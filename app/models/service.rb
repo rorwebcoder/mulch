@@ -36,6 +36,10 @@ class Service < ActiveRecord::Base
     end
   end
   
+  def formatted_title
+    "I will #{self.title}"
+  end
+  
   private
   def set_default_cost
     self.cost = 5
