@@ -4,7 +4,8 @@
 
                             <div class="mp-box">
                                 <div class="box-row p-b-0">
-
+																																																				
+																				<%= render :partial => "/common/breadcrumb", :locals => {:category => @category, :level => "category"} %>
 																				<%= render :partial => "/common/sub_or_inner_category_box" , :locals => {:sub_categories => @sub_categories}  %>
 
 																																			

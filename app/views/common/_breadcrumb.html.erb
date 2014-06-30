@@ -1,0 +1,13 @@
+																																
+		<nav class="breadcrumb">
+				<% if level == "category" %>
+						<span><%= category.name %></span>
+				<% elsif level == "sub_category" %>
+						<span><%= link_to sub_category.category.name, category_path(sub_category.category) %></span> / 
+						<span><%= sub_category.name %></span>
+				<% elsif level == "inner_category" %>
+						<span><%= link_to inner_category.sub_category.category.name, category_path(inner_category.sub_category.category) %></span> / 
+						<span><%= link_to inner_category.sub_category.name, sub_category_path(inner_category.sub_category) %></span> / 
+						<span><%= inner_category.name %></span>
+				<% end %>
+		</nav>
