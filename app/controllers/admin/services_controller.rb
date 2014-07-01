@@ -4,6 +4,9 @@ class Admin::ServicesController < ApplicationController
 		before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
+				params[:category] = params[:category].to_i if params[:category]
+				params[:sub_category] = params[:sub_category].to_i if params[:sub_category]
+				params[:service_inner_category_id] = params[:service_inner_category_id].to_i if params[:service_inner_category_id]
 				@categories = Category.all
 				@category = Category.find(params[:category]) if Category.exists?(params[:category])
 				@sub_categories = @category ? @category.sub_categories : []
