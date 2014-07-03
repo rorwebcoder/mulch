@@ -1,0 +1,10 @@
+var subCategoryObj = $("#sub_category");
+
+subCategoryObj.empty(); // remove old options
+subCategoryObj.append($("<option></option>").attr("value", "").text("Select SubCategory"));
+<% @sub_categories.each do |sc| %>
+		subCategoryObj.append($("<option></option>").attr("value", <%= sc.id %>).text("<%= sc.name %>"));
+<% end %>
+
+innerCategoryObj.empty();
+innerCategoryObj.append($("<option></option>").attr("value", "").text("Select Inner Category"));

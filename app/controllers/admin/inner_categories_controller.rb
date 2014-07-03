@@ -4,7 +4,14 @@ class Admin::InnerCategoriesController < ApplicationController
 				before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
-				@inner_categories = InnerCategory.order("created_at DESC").all
+				params[:category] = params[:category].to_i if params[:category]
+				params[:sub_category] = params[:sub_category].to_i if params[:sub_category]
+				@categories = Category.all
+				@category = Category.find(params[:category]) if Category.exists?(params[:category])
+				@sub_categories = @category ? @category.sub_categories : []
+				@sub_category = SubCategory.find(params[:sub_category]) if SubCategory.exists?(params[:sub_category])
+				category = @sub_category || @category
+				@inner_categories = category ? category.inner_categories : InnerCategory.order("created_at DESC").all
 		end
 		
 		def new
@@ -40,6 +47,12 @@ class Admin::InnerCategoriesController < ApplicationController
 				@inner_category.destroy
 				flash[:success] = "Sub Category deleted successfully."
 				redirect_to admin_inner_categories_path
+		end
+		
+		# Method defined to handle ajax request to populate sub category, inner category.
+		def populate_category
+				category = Category.find(params[:category_id])
+				@sub_categories = category.sub_categories
 		end
 		
 				private		

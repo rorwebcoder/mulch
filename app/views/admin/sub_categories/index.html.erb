@@ -21,6 +21,16 @@
 																										</tbody>
 																						</table>
 																				<% else %>
+																				<div>
+																				<%= form_tag('/admin/sub_categories', :method => 'get') do -%>
+																		
+																						<div>
+																								Category
+																								<%= select_tag "category", options_from_collection_for_select(@categories, "id", "name", params[:category]), :prompt => "Select Category" %>
+																						</div>  
+																						<div><%= submit_tag 'Filter' %></div>
+																				<% end -%>
+																				</div>
 																				<table style="width:100%" class="reference">
 																									<tbody>
 																									<tr>

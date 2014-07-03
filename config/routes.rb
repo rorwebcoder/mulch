@@ -21,7 +21,11 @@ Mulch::Application.routes.draw do
     resources :users
     resources :categories
     resources :sub_categories
-    resources :inner_categories
+    resources :inner_categories do
+      collection do
+        post 'populate_category'
+      end
+    end
     resources :services do
       collection do
         post 'populate_category'

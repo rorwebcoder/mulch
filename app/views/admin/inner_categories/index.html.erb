@@ -21,6 +21,18 @@
 																										</tbody>
 																						</table>
 																				<% else %>
+																				<div>
+																				<%= form_tag('/admin/inner_categories', :method => 'get') do -%>																		
+																				<div id="innerCategoryForm">
+																						Category
+																						<%= select_tag "category", options_from_collection_for_select(@categories, "id", "name", params[:category]), :prompt => "Select Category" %>
+																						SubCategory
+																						<%= select_tag "sub_category", options_from_collection_for_select(@sub_categories, "id", "name", params[:sub_category]), :prompt => "Select SubCategory" %>
+																								</div>  
+																								<div><%= submit_tag 'Filter' %></div>
+																						<% end -%>
+																						</div>
+																						
 																				<table style="width:100%" class="reference">
 																									<tbody>
 																									<tr>
@@ -57,3 +69,8 @@
 										<div style="clear:both;"></div></div>
 										
 		</div>
+		
+		
+<script type="text/javascript">
+		var populateInnerCategoryUrl = "<%= populate_category_admin_inner_categories_path %>";
+</script>

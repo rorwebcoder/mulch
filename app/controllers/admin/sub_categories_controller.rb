@@ -4,7 +4,10 @@ class Admin::SubCategoriesController < ApplicationController
 				before_filter :valid_record, :only => [:show, :edit, :update, :destroy]
 		
 		def index
-				@sub_categories = SubCategory.order("created_at DESC").all
+				params[:category] = params[:category].to_i if params[:category]
+				@categories = Category.all
+				@category = Category.find(params[:category]) if Category.exists?(params[:category])
+				@sub_categories = @category ? @category.sub_categories : SubCategory.order("created_at DESC").all
 		end
 		
 		def new

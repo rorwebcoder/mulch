@@ -5,7 +5,7 @@ $(function() {
   // Published dropdown event
 		initiateSelectEvent();
 		
-  $(".panel_contents #category, .panel_contents #sub_category").on('change', function() {
+  $("#serviceForm #category, #serviceForm #sub_category").on('change', function() {
 				if (this.value == "") {
 						// No action.
 				}
