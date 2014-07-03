@@ -16,6 +16,7 @@ class Category < ActiveRecord::Base
   
   # Named scopes
   scope :public_accessible, where(["is_public = ? and is_published = ?", true, true])
+  scope :published, where(["is_published = ?", true])
   
 
     def get_services_of_category

@@ -2,20 +2,20 @@ module ApplicationHelper
 
 
 		def categories_home_display
-				Category.public_accessible.limit(7)
+				Category.published.limit(7)
 		end
 		
 		def categories_home_more
-				categories_more = Category.public_accessible
+				categories_more = Category.published
 				categories_more = categories_more - categories_home_display
 		end
 		
 		def categories_count
-				Category.public_accessible.count
+				Category.published.count
 		end
 		
 		def categories_home_dropdown_display
-    @categories =  Category.public_accessible
+    @categories =  Category.published
   end
   
 		
