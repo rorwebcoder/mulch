@@ -1,5 +1,5 @@
 		<td><%= service.title %></td>
-		<td><%= service.user.name.blank? ? service.user.email : service.user.name %></td>
+		<td><%= link_to (service.user.name.blank? ? service.user.email : service.user.name), admin_user_path(service.user) %></td>
 		<td><%= service.short_desc %></td>		
 		<td><%= service.response_time %></td>		
 		<td><%= service.deliverable_days %></td>		

@@ -1,0 +1,50 @@
+ 
+<%= render :partial => "/common/admin/title_bar.html" , :locals => {:titles => "Users"} %>
+		
+<%#=@users%>
+
+<div id="active_admin_content" class="without_sidebar">
+<div class="columns">
+              <div class="column" style="width: 100.0%;">
+                <div class="panel">
+                  <h3>User Detail</h3>
+                  <div class="panel_contents">
+                    <div>
+																				
+ 
+																<p>
+																		Name:
+																		<%=@user.name.blank? ? "No Name" : @user.name%>
+																</p>
+																<p>
+																		Email: 	
+																		<%=@user.email%>		
+																</p>
+																<p>
+																		Is confirmed:
+																		<%=@user.confirmed_at.blank? ? "Not Verified" : "Verified"%>
+																</p>
+																<p>
+																		Login count:
+																		<%=@user.sign_in_count%>
+																</p>
+																<p>
+																		Last Login At:
+																		<%=@user.last_sign_in_at  %>
+																</p>
+																<p>
+																		Role:
+																		<%=@user.role %>
+																</p>
+																</div>
+																<%= link_to "Back to Users", admin_users_path %>
+                    <div>
+                  
+
+</div>
+                  </div>
+                </div>
+              </div>
+										<div style="clear:both;"></div></div>
+										
+		</div>
