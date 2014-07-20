@@ -1,3 +1,4 @@
+<% categories = categories_list %>
 <div class="inner cf">
    <form method="get" id="search-form" action="/search/gigs" accept-charset="UTF-8">
       <div style="margin:0;padding:0;display:inline"><input type="hidden" value="?" name="utf8"></div>
@@ -11,6 +12,37 @@
       <label class="wrap-search-caption" for="query">SEARCH</label>
    </form>
    
+		<div class="fake-dropdown fake-dropdown-double" style="visibility: visible;">
+		<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-autowidth="true" rel="nofollow">CATEGORIES</a>
+		<div class="dropdown-menu" role="menu" style="top: -2px;">
+				<div class="dropdown-inner js-dropdown-inner"><span class="arr"></span>
+						<span class="rightie"></span>
+						<ul>
+								<% categories.each do |c| %>
+										<li>
+												<%= link_to c.name, category_path(c), :id => c.id.to_s, :class => "js-gtm-event categoryNames" %>
+										</li>  
+								<% end %>
+						</ul>
+						<div class="side-menu" style="min-height: 301px;">
+								<% categories.each do |c| %>
+										<ul class="subcategories_list" id="subCategory_<%=c.id%>">
+												<% c.sub_categories.each_with_index do |sc, indx| %>
+														<li>
+																<% if indx == 0 %>
+																		<h5><%= link_to sc.name, sub_category_path(sc) %></h5>
+																<% else %>
+																		<%= link_to sc.name, sub_category_path(sc) %>
+																<% end %>
+														</li>
+												<% end %>
+										</ul>
+								<% end %>								
+						</div>
+				</div>
+		</div>
+</div>
+
 		<!--	<div class="fake-dropdown fake-dropdown-double" style="visibility: visible;">
       <a rel="nofollow" data-autowidth="true" data-toggle="dropdown" class="dropdown-toggle" href="#">CATEGORIES</a>
 												<div role="menu" class="dropdown-menu" style="top: -2px;">

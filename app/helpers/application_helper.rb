@@ -17,6 +17,9 @@ module ApplicationHelper
 		def categories_home_dropdown_display
     @categories =  Category.published
   end
-  
+		
+		def categories_list
+				Category.published.includes(:sub_categories)
+		end
 		
 end
