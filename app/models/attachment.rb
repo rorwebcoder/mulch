@@ -6,7 +6,7 @@ class Attachment < ActiveRecord::Base
       :url => "/system/:attachment/:id/:style/:filename"
   #~ validates_attachment_content_type :media, :content_type => /\Aimage\/.*\Z/
   validates_attachment :media, :presence => true,
-    :content_type => { :content_type => "image/jpeg" }
+    :content_type => { :content_type => /^image\/(png|gif|jpeg)/ }
     #:size => { :in => 0..10.kilobytes }
   
   belongs_to :attachable, :polymorphic => true
