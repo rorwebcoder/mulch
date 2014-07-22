@@ -116,7 +116,7 @@ function serviceShowJs() {
 						total += extra_v[i] << 0;
 				}
 				total += parseInt(additional_service)
-				$(".order_extra_button").val("Order Now ($"+total+")")
-				$(".order_extra_anchor").text("Order Now ($"+total+")")
+				$(".order_extra_button").val("Order Now (INR "+total+")")
+				$(".order_extra_anchor").text("Order Now (INR "+total+")")
 		});
 }

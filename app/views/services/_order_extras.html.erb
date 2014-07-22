@@ -6,7 +6,7 @@
                                                     Service Quantity: 
 																																																				<select name="qt_clone2" class="additional_services">
 																																																						<%(1..10).each do |s|%>
-																																																				<option value="<%=s * 5%>"><%=s%></option>
+																																																				<option value="<%=s * 200%>"><%=s%></option>
 																																																				<%end%>
 																																														</select>
                                                 </span>
@@ -33,7 +33,7 @@
 																																																												<%if !extra_charge.cost.blank?%>
 																																																												<select data-multi="true" name="gig_items" class="extras_dropdown" id="cost_<%=extra_charge.id%>">
 																																																												<%(1..10).each do |a|%>
-																																																												<option value="<%=a * extra_charge.cost.to_i%>"><%=a%> ($<%=a * extra_charge.cost.to_i%>)</option>
+																																																												<option value="<%=a * extra_charge.cost.to_i%>"><%=a%> (INR <%=a * extra_charge.cost.to_i%>)</option>
 																																																												<%end%>
 																																																												</select>
 																																																												<%end%>
@@ -46,9 +46,9 @@
 
                                         <div class="extras-button">
 <div class="gig-order-button">
-        <input type="submit" data-bonus-order="false" data-gtm-action="extra_order" data-gtm-event="order" id="qt-449393" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event order_extra_button" value="Order Now ($5)">
+        <input type="submit" data-bonus-order="false" data-gtm-action="extra_order" data-gtm-event="order" id="qt-449393" class="btn-standard-lrg js-gig-price disableonclick js-gtm-event js-gig-price-quantity js-gtm-event order_extra_button" value="Order Now (INR 200)">
 </div>
-                                                <small>*including $5 service, Extras</small>
+                                                <small>*including INR 200 service, Extras</small>
                                         </div>
                                     </div>
 																																				
