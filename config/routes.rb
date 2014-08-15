@@ -47,6 +47,16 @@ Mulch::Application.routes.draw do
       post 'populate_category'
     end
   end
+  resources :orders do
+    collection do
+      post 'purchase'
+    end
+  end
+  resources :carts do
+    collection do
+      get 'checkout'
+    end
+  end
   # Sample resource route with options:
   #   resources :products do
   #     member do

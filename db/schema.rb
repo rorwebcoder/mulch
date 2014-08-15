@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140629131321) do
+ActiveRecord::Schema.define(:version => 20140729045906) do
 
   create_table "attachments", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -33,6 +33,34 @@ ActiveRecord::Schema.define(:version => 20140629131321) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "username"
+  end
+
+  create_table "cart_item_extra_charges", :force => true do |t|
+    t.integer  "cart_item_id"
+    t.integer  "extra_charge_id"
+    t.integer  "quantity"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "cart_items", :force => true do |t|
+    t.integer  "cart_id"
+    t.integer  "service_id"
+    t.integer  "quantity"
+    t.float    "service_cost"
+    t.string   "status",       :default => "open"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  create_table "carts", :force => true do |t|
+    t.float    "total_cost"
+    t.float    "total_service_cost"
+    t.float    "charges"
+    t.string   "status",             :default => "open"
+    t.integer  "user_id"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -71,6 +99,14 @@ ActiveRecord::Schema.define(:version => 20140629131321) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "order_item_extra_charges", :force => true do |t|
+    t.integer  "order_item_id"
+    t.integer  "extra_charge_id"
+    t.integer  "quantity"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
   create_table "order_items", :force => true do |t|
     t.integer  "order_id"
     t.integer  "service_id"
@@ -78,6 +114,7 @@ ActiveRecord::Schema.define(:version => 20140629131321) do
     t.string   "status",       :default => "open"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.integer  "quantity"
   end
 
   create_table "orders", :force => true do |t|

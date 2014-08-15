@@ -4,6 +4,7 @@
 $(function() {
 		if (typeof(serviceShowPage) != "undefined") {
 				serviceShowJs();
+				orderButtonClick();
 		}
 		initializeChangeEvent();
 		if (typeof(displayStepNumber) != "undefined" && (displayStepNumber > 0)) {
@@ -118,5 +119,12 @@ function serviceShowJs() {
 				total += parseInt(additional_service)
 				$(".order_extra_button").val("Order Now (INR "+total+")")
 				$(".order_extra_anchor").text("Order Now (INR "+total+")")
+		});
+}
+
+// Add click event to order button
+function orderButtonClick() {
+		$("#orderButtonTop").click(function() {
+				$("#chartsForm").submit();
 		});
 }

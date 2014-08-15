@@ -1,10 +1,11 @@
+<%= form_tag carts_path, :id => "chartsForm" do -%>
 <div class="gig-main-extras with-multiples">
-
+		
                                         <h4>
                                             Check out my Service Extras
                                                 <span class="quantity-select">
                                                     Service Quantity: 
-																																																				<select name="qt_clone2" class="additional_services">
+																																																				<select name="service_count" class="additional_services">
 																																																						<%(1..10).each do |s|%>
 																																																				<option value="<%=s * 200%>"><%=s%></option>
 																																																				<%end%>
@@ -19,7 +20,7 @@
                                                 <tr class="js-extra-row">
                                                     
                                                     <td class="chkbox">
-                                                        <input type="checkbox" value="" name="gig_items_check" class="extras_checkbox" id="pickextra_<%=extra_charge.id%>" data-multi="true" data-cost="5.0" class="gig_item-577133">
+                                                        <input type="checkbox" value="<%=extra_charge.id%>" name="extra_charges_id[]" class="extras_checkbox" id="pickextra_<%=extra_charge.id%>" data-multi="true" data-cost="5.0" class="gig_item-577133">
                                                     </td>
                                                     <td>
                                                         <%=extra_charge.description.blank? ? "No Description" : extra_charge.description%>
@@ -31,12 +32,13 @@
 																																																				
                                                             <strong></strong>
 																																																												<%if !extra_charge.cost.blank?%>
-																																																												<select data-multi="true" name="gig_items" class="extras_dropdown" id="cost_<%=extra_charge.id%>">
+																																																												<select data-multi="true" name="extra_charges_count[<%=extra_charge.id%>]" class="extras_dropdown" id="cost_<%=extra_charge.id%>">
 																																																												<%(1..10).each do |a|%>
 																																																												<option value="<%=a * extra_charge.cost.to_i%>"><%=a%> (INR <%=a * extra_charge.cost.to_i%>)</option>
 																																																												<%end%>
 																																																												</select>
 																																																												<%end%>
+																																												<%= hidden_field_tag "extra_charges_cost[#{extra_charge.id}]", extra_charge.cost.to_i %>
                                                     </td>
                                                 </tr>
 
@@ -51,5 +53,5 @@
                                                 <small>*including INR 200 service, Extras</small>
                                         </div>
                                     </div>
-																																				
-																																				
+																										<%= hidden_field_tag "service_id", @service.cost.to_i %>
+<% end -%>

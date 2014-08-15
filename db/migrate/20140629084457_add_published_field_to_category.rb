@@ -4,6 +4,6 @@ class AddPublishedFieldToCategory < ActiveRecord::Migration
   end
 
   def down
-    remove_column :services, :is_published
+    remove_column :categories, :is_published
   end
 end
