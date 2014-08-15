@@ -5,7 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.find_or_create_by_email({ name: 'admin', email: "admin@test.com", password: "admin123", password_confirmation: "admin123", role: "admin",confirmed_at: Time.now, confirmation_sent_at: Time.now })
+
+
+#User.find_or_create_by_email({ name: 'admin', email: "admin@test.com", password: "admin123", password_confirmation: "admin123", role: "admin",confirmed_at: Time.now, confirmation_sent_at: Time.now })
+# Create user manually with the following code,
+#~ u = User.new({ name: 'guest', email: "guest@test.com", password: "guest123", password_confirmation: "guest123", role: "user"})
+#~ u.skip_confirmation!
+#~ u.save
+
 
 # category accessible to both user & admin => Public categories
 food_category = Category.find_or_create_by_name(:name => "Food N Beverage", :description => "food and beverage category", :is_public => true)
