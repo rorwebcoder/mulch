@@ -9,6 +9,8 @@ gem 'rails', '3.2.17'
 
 gem 'mysql2'
 
+# gem 'pg'
+
 group :production do
   gem 'pg'
 end
